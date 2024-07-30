@@ -1,0 +1,24 @@
+$border: 1px solid transparent;
+$border-radius: 30px;
+$background-color: var(--primary);
+$color: var(--white);
+$font-size: 20px;
+$padding: 10px 20px 12px;
+$box-shadow: none;
+$gap: var(--gap-xs);
+
+.main-btn {
+  @extend %btn-reset;
+  @extend %flex-centered-content;
+
+  width: fit-content;
+  min-width: 50px;
+  min-height: 50px;
+  font-size: $font-size;
+  padding: $padding;
+  border-radius: $border-radius;
+  color: $color;
+  background-color: $background-color;
+  box-shadow: $box-shadow;
+  gap: $gap;
+}

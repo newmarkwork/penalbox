@@ -1,0 +1,20 @@
+%flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+%flex-align {
+  display: flex;
+  align-items: center;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-centered-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

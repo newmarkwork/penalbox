@@ -1,0 +1,38 @@
+:root {
+  --primary-font: 'Glober', sans-serif;
+  --secondary-font: 'Inter', sans-serif;
+
+  // font sizes
+  --fs-xl: clamp(36px, 5vw, 64px);
+  --fs-lg: clamp(20px, 4vw, 48px);
+  --fs-md: clamp(16px, 2.8vw, 24px);
+  --fs-sm: clamp(14px, 2.4vw, 18px);
+  --fs-xs: 12px;
+  --fs-xxs: 10px;
+
+  // font weights
+  --fw-h: 900; // heavy
+  --fw-xb: 800; // extra bold
+  --fw-b: 700; // bold
+  --fw-sb: 600; // semi bold
+  --fw-m: 500; // medium
+  --fw-r: 400; // regular
+  --fw-l: 300; // light
+  --fw-xl: 200; // extra light
+  --fw-t: 100; // thin
+
+  // line heights
+  --base-line-height: 1.2;
+
+  // main styles
+  --main-title-fs: var(--fs-lg);
+  --main-title-fw: var(--fw-b);
+  --base-title-fs: var(--fs-md);
+  --base-title-fw: var(--fw-m);
+  --main-text-fs: calc(var(--fs-md) / 1.3);
+  --base-text-fs: var(--fs-sm);
+  --main-title-color: var(--primary);
+  --base-title-color: var(--primary);
+  --main-text-color: var(--secondary);
+  --base-text-color: var(--secondary);
+}

@@ -1,0 +1,26 @@
+mixin main-btn(data)
+  if data.type != 'link'
+    button(type= data.type class= data.cls ? data.cls : null data-modal-opener= data.modal ? data.modal : null).main-btn
+      if data.iconName && data.iconPosition == 'left'
+        svg(width= data.iconWidth height= data.iconHeight)
+          use(xlink:href=`./assets/svg-sprite.svg#icon-${data.iconName}`)
+
+      span!= data.text
+
+      if data.iconName && data.iconPosition == 'right'
+        svg(width= data.iconWidth height= data.iconHeight)
+          use(xlink:href=`./assets/sprite.svg#icon-${data.iconName}`)
+
+  if data.type == 'link'
+    a(href= data.href class= data.cls ? data.cls : null).main-btn
+      if data.iconName && data.iconPosition == 'left'
+        svg(width= data.iconWidth height= data.iconHeight)
+          use(xlink:href=`./assets/svg-sprite.svg#icon-${data.iconName}`)
+
+      span!= data.text
+
+      if data.iconName && data.iconPosition == 'right'
+        svg(width= data.iconWidth height= data.iconHeight)
+          use(xlink:href=`./assets/sprite.svg#icon-${data.iconName}`)
+
+

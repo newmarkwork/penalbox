@@ -1,0 +1,11 @@
+block variables
+  - modalId = ''
+  - modalClasses = ''
+
+.modal-overlay
+  .modal.main-modal(id= modalId class= modalClasses)
+    button(type="button" aria-label="Закрыть").modal-closer
+      svg(width="20" height="20")
+        use(xlink:href="./assets/svg-sprite.svg#icon-close")
+    .modal-content
+      block modalContent

@@ -1,0 +1,17 @@
+- let isProd = process.argv.includes('build');
+
+mixin main-head(title, descriprion, keywords, styleFileNames)
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title!= title
+    meta(name="description" content!= descriprion)
+    meta(name="keywords" content!= keywords)
+    link(rel="stylesheet" href!=`./assets/template${isProd ? '.min' : ''}.css`)
+
+    if styleFileNames
+      each fileName in styleFileNames
+        link(rel="stylesheet" href!=`./assets/${fileName}${isProd ? '.min' : ''}.css`)
+
+    script(defer src=`./assets/bundle${isProd ? '.min' : ''}.js`)

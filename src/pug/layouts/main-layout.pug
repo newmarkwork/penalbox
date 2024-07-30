@@ -1,0 +1,26 @@
+include ./main-head
+
+doctype html
+
+block variables
+
+html(lang="ru")
+  +main-head(title, description, keywords, styleFileNames)
+
+  body
+    include ../ui-components/loaders/loader
+    include ../components/header/header
+
+    main
+      block content
+
+    include ../components/footer/footer
+
+    //- Модальные окна используемые на ВСЕХ страницах сайта
+
+    include ../modals/success-modal
+    include ../modals/error-modal
+
+    block modals
+
+    //- script(async src="https://api-maps.yandex.ru/2.1/?apikey=4aa8fccd-d097-4486-835a-704db2b05b2e&lang=ru_RU")

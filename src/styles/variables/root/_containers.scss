@@ -1,0 +1,10 @@
+:root {
+  --content-width: 1240px;
+  --container-offset: clamp(20px, 6vw, 60px);
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --content-fluid-width: 1920px;
+  --container-fluid-offset: 0;
+  --container-fluid-width: calc(
+    var(--content-fluid-width) + (var(--container-offset) * 2)
+  );
+}

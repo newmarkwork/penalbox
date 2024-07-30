@@ -1,0 +1,23 @@
+/* stylelint-disable */
+
+/*down*/
+
+@mixin media-down($width) {
+  @media (max-width: calc($width - 1px)) {
+    @content;
+  }
+}
+
+@mixin mobile-down {
+  @media (max-width: (var(--mobile-width))) {
+    @content;
+  }
+}
+
+/*up*/
+
+@mixin media-up($width) {
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}

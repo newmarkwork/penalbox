@@ -1,0 +1,32 @@
+%list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+%fieldset-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+%btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+%input-reset {
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}

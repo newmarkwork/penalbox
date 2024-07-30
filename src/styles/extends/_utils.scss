@@ -1,0 +1,11 @@
+%base-section-list {
+  @extend %list-reset;
+  @extend %flex-column;
+
+  gap: var(--gap-xl);
+  margin-top: calc(-1 * var(--gap-m));
+}
+
+%shaker {
+  animation: shaker 0.5s ease-in-out;
+}

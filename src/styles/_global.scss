@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  border-radius: 0;
+
+  @extend %scrollbar;
+
+  text-wrap: balance;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  text-size-adjust: none;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--primary-font);
+  font-weight: var(--fw-r);
+  line-height: var(--base-line-height);
+  letter-spacing: 0.1em;
+  overflow-x: hidden !important;
+  background-color: var(--site-bg-color);
+  color: var(--site-text-color);
+
+  &.body-locked {
+    overflow: hidden;
+  }
+}
+
+footer {
+  margin-top: auto;
+}
+
+img {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: var(--site-text-color);
+}
+
+a[href='tel:*'] {
+  white-space: nowrap;
+}
+
+a,
+button {
+  @extend %hover-opacity;
+
+  cursor: pointer;
+}
+
+address {
+  font-style: normal;
+}
+
+.hidden {
+  display: none !important;
+}
+
+picture {
+  display: flex;
+}
+
+.hidden-laptop-down {
+  @include media-down($laptop-width) {
+    display: none;
+  }
+}
+
+.hidden-laptop-up {
+  @include media-up($laptop-width) {
+    display: none;
+  }
+}
