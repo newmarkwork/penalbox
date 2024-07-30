@@ -1,0 +1,7 @@
+mixin social(data)
+  .social
+    ul.social__list
+      each item in data
+        li.social__list-item
+          a(href="#" rel="noopener nofollow norefferer")
+            img(src=`./assets/images/${item.icon}.svg` alt= item.alt width= item.iconW height= item.iconH)

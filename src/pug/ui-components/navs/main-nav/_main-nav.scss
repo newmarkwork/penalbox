@@ -1,0 +1,22 @@
+.main-nav {
+  outline: 1px solid red;
+  flex-grow: 1;
+
+  &__list {
+    @extend %list-reset;
+    @extend %flex-wrap;
+    gap: var(--space-sm);
+    justify-content: space-around;
+    align-items: center;
+    gap: var(--space-m);
+  }
+
+  &__list-item {
+    a {
+      @extend %flex-center;
+      font-weight: 700;
+      font-size: 18px;
+      padding: var(--space-xs) var(--space-s);
+    }
+  }
+}

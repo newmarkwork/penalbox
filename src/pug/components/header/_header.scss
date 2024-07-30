@@ -1,3 +1,11 @@
 .header {
-  background-color: white;
+  position: sticky;
+  top: 0;
+  background-color: var(--white);
+  padding: var(--space-s) 0;
+
+  &__container {
+    @extend %flex-align;
+    gap: calc(var(--space-l) * 2);
+  }
 }

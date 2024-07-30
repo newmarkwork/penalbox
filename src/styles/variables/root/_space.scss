@@ -1,0 +1,11 @@
+:root {
+  --base-space: 8px;
+  --space-xxs: calc(var(--base-space) / 2);
+  --space-xs: var(--base-space);
+  --space-s: calc(var(--base-space) * 1.5);
+  --space-m: calc(var(--base-space) * 2);
+  --space-l: calc(var(--base-space) * 3);
+  --space-xl: calc(var(--base-space) * 4);
+  --space-xxl: calc(var(--base-space) * 5);
+  --space-xxxl: calc(var(--base-space) * 10);
+}

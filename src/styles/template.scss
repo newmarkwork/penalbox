@@ -7,5 +7,10 @@
 @import './global';
 
 // components
+@import '../pug/components/header/header';
+
+@import '../pug/ui-components/logos/main-logo/main-logo';
+@import '../pug/ui-components/navs/main-nav/main-nav';
+@import '../pug/ui-components/social/social';
 
 @import '../pug/modals/modal';

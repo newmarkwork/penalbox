@@ -1,18 +1,19 @@
 :root {
-  --primary: #a2d729;
-  --secondary: #fffce1;
+  --primary: #f18822;
+  --secondary: #454545;
 
-  // --success: #28a745;
-  // --warning: #ffc107;
+  --success: #28a745;
+  --warning: #ffc107;
   --danger: #dc3545;
 
-  // --info: #17a2b8;
-  // --light: #f8f9fa;
+  --info: #4b5e7f;
+  --muted: #a8a8a8;
   --dark: #161414;
 
-  // --muted: #6c757d;
+  // --light: #6c757d;
   --white: #fff;
   --black: #000;
-  --site-bg-color: var(--dark);
+
+  --site-bg-color: var(--white);
   --site-text-color: var(--secondary);
 }
