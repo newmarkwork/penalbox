@@ -9,3 +9,20 @@
 %shaker {
   animation: shaker 0.5s ease-in-out;
 }
+
+%title-underline {
+  position: relative;
+  margin-bottom: calc(var(--space-m) + 1em);
+
+  &::after {
+    position: absolute;
+    bottom: calc(var(--space-m) * -1);
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    background-color: var(--primary);
+    width: 25vw;
+    max-width: 160px;
+    height: 7px;
+  }
+}

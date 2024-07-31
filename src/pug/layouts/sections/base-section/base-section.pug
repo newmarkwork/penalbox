@@ -1,0 +1,14 @@
+block variables
+  - sectionTitle = '';
+  - sectionDesc = '';
+  - sectionCls = '';
+  - sectionID = '';
+
+section.section.base-section(class= sectionCls id= sectionID)
+  .container
+    if sectionTitle || sectionDesc
+      .base-section__header
+        h2.base-title= sectionTitle
+        p.base-subtitle= sectionDesc
+    .base-section__content
+      block content

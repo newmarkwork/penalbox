@@ -1,0 +1,20 @@
+.base-section {
+  padding: calc(var(--space-xl) * 2) 0;
+
+  &__header {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: clamp(var(--space-xl), 4vw, calc(var(--space-xl) * 2));
+
+    .base-title {
+      text-align: center;
+      text-transform: uppercase;
+
+      @extend %title-underline;
+    }
+
+    .base-subtitle {
+      text-align: center;
+    }
+  }
+}

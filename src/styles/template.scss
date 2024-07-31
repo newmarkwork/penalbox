@@ -8,9 +8,15 @@
 
 // components
 @import '../pug/components/header/header';
-
-@import '../pug/ui-components/logos/main-logo/main-logo';
+@import '../pug/components/logos/main-logo/main-logo';
 @import '../pug/ui-components/navs/main-nav/main-nav';
-@import '../pug/ui-components/social/social';
+@import '../pug/components/social/social';
+@import '../pug/sections/index-page/features/features';
+@import '../pug/ui-components/lists/feature-list/feature-list';
+@import '../pug/ui-components/cards/product-card/product-card';
+
+@import '../pug/sections/index-page/hero/hero';
+@import '../pug/components/item-preview/item-preview';
+@import '../pug/layouts/sections/base-section/base-section';
 
 @import '../pug/modals/modal';

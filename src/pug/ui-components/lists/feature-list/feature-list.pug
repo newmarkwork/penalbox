@@ -1,0 +1,6 @@
+mixin feature-list(data)
+  ul.feature-list
+    each item in data
+      li.feature-list__item
+        img(src= `./assets/images/${item.icon.name}` alt= item.icon.name width= item.icon.w height= item.icon.h)
+        span.base-text!= item.text

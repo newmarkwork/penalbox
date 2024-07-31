@@ -1,7 +1,0 @@
-.social {
-  &__list {
-    @extend %flex-align;
-    @extend %list-reset;
-    gap: 0 var(--space-xxl);
-  }
-}

@@ -31,7 +31,8 @@ body {
   letter-spacing: 0.1em;
   overflow-x: hidden !important;
   background-color: var(--site-bg-color);
-  color: var(--site-text-color);
+  color: var(--site-color);
+  container: main / inline-size;
 
   &.body-locked {
     overflow: hidden;

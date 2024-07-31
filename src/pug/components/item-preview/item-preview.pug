@@ -1,0 +1,17 @@
+mixin item-preview(data)
+  .item-preview
+    each row in data.rows
+      .item-preview__row
+        img(src=`./assets/images/${row.img.name}@1x.png` alt= row.img.alt width= row.img.w height= row.img.h)
+
+        .item-preview__row-content
+          if row.title
+            span.item-preview__title!= row.title
+          if row.subtitle
+            p.base-subtitle.fw-b!= row.subtitle
+          if row.text
+            p.base-text!= row.text
+          if row.list
+            ul
+              each item in row.list
+                li!= item
