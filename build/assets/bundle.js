@@ -14185,12 +14185,21 @@
 	    });
 	    if (pagination) {
 	      const paginationItems = slider.querySelectorAll('.swiper-pagination-bullet');
+	      let mouseCurrentTarget = null;
 	      paginationItems.forEach((item, index) => {
 	        item.addEventListener('mouseover', evt => {
 	          setTimeout(() => {
-	            swiper.slideTo(index);
+	            onMouseOverChangeSlide(evt.target, index);
 	          }, 200);
 	        });
+	      });
+	      const onMouseOverChangeSlide = (current, index) => {
+	        if (current !== null && current === mouseCurrentTarget) {
+	          swiper.slideTo(index);
+	        }
+	      };
+	      document.addEventListener('mouseover', evt => {
+	        mouseCurrentTarget = evt.target;
 	      });
 	    }
 	  });
