@@ -13,10 +13,12 @@
 @import '../pug/components/social/social';
 @import '../pug/sections/index-page/features/features';
 @import '../pug/ui-components/lists/feature-list/feature-list';
+@import '../pug/components/product-preview-tabs/product-preview-tabs';
 @import '../pug/ui-components/cards/product-card/product-card';
-
+@import '../pug/ui-components/sliders/product-card-slider/product-card-slider';
+@import '../pug/ui-components/sliders/product-card-inner-slider/product-card-inner-slider';
 @import '../pug/sections/index-page/hero/hero';
 @import '../pug/components/item-preview/item-preview';
 @import '../pug/layouts/sections/base-section/base-section';
-
+@import '../pug/sections/common/offer/offer';
 @import '../pug/modals/modal';

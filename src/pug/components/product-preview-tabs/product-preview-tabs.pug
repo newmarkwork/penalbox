@@ -1,0 +1,147 @@
+include ../../ui-components/sliders/product-card-slider/product-card-slider
+
+.tabs
+  .tabs__header
+    button.tabs__header-item(data-id="0").active Система для деревянных дверей
+    button.tabs__header-item(data-id="1") Система для стеклянных дверей
+
+  .tabs__content
+    .tabs__content-item(data-id="0").active
+      +product-card-slider([
+        {
+          items: [
+            {
+              img: {
+                name: 'product-img-1.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-2.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-3.png'
+              },
+            }
+          ],
+
+          title: 'Single Lux',
+          text: 'Используется под обрамление деревянными доборами обрамление деревянными доборами'
+        },
+        {
+          items: [
+            {
+              img: {
+                name: 'product-img-2.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-3.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-1.png'
+              },
+            }
+          ],
+
+          title: 'Single Plaster',
+          text: 'Используется под обрамление деревянными доборами обрамление деревянными доборами'
+        },
+        {
+          items: [
+            {
+              img: {
+                name: 'product-img-3.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-1.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-2.png'
+              },
+            }
+          ],
+
+          title: 'Single Lux/Plaster',
+          text: 'Используется под обрамление деревянными доборами обрамление деревянными доборами'
+        }],
+      )
+
+    .tabs__content-item(data-id="1")
+      +product-card-slider([
+        {
+          items: [
+            {
+              img: {
+                name: 'product-img-1.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-2.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-3.png'
+              },
+            }
+          ],
+
+          title: 'Single Lux',
+          text: 'Используется под обрамление деревянными доборами обрамление деревянными доборами'
+        },
+        {
+          items: [
+            {
+              img: {
+                name: 'product-img-2.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-3.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-1.png'
+              },
+            }
+          ],
+
+          title: 'Single Plaster',
+          text: 'Используется под обрамление деревянными доборами обрамление деревянными доборами'
+        },
+        {
+          items: [
+            {
+              img: {
+                name: 'product-img-3.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-1.png'
+              },
+            },
+            {
+              img: {
+                name: 'product-img-2.png'
+              },
+            }
+          ],
+
+          title: 'Single Lux/Plaster',
+          text: 'Используется под обрамление деревянными доборами обрамление деревянными доборами'
+        }],
+      )

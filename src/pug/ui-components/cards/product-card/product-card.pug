@@ -1,0 +1,9 @@
+include ../../sliders/product-card-inner-slider/product-card-inner-slider
+
+mixin product-card(data)
+  .product-card
+    .product-card__header
+      +product-card-inner-slider(data.items)
+    .product-card__content
+      span.product-card__title!= data.title
+      span.product-card__text!= data.text

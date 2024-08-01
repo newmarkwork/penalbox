@@ -1,0 +1,9 @@
+mixin product-card-inner-slider(slides)
+  -console.log(slides)
+  .swiper.product-card-inner-slider
+    .swiper-wrapper
+      each slide in slides
+        .swiper-slide
+          img(src=`./assets/images/${slide.img.name}` alt="Товар" width="460" height="380")
+
+    .swiper-pagination.product-card-inner-slider-pagination

@@ -6,6 +6,7 @@
 
   &__container {
     @extend %flex-align;
+
     gap: calc(var(--space-l) * 2);
   }
 }

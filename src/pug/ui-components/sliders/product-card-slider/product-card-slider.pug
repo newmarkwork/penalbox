@@ -1,0 +1,14 @@
+include ../../cards/product-card/product-card
+
+mixin product-card-slider(slides)
+  .swiper.product-card-slider
+    .swiper-wrapper
+      each slide in slides
+        .swiper-slide
+          +product-card(slide)
+
+    .product-card-slider-controls
+      .swiper-button-prev.product-card-slider-button-prev
+      .swiper-pagination.product-card-slider-pagination
+      .swiper-button-next.product-card-slider-button-next
+
