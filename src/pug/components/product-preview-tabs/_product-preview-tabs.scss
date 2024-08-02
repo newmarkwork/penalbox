@@ -28,11 +28,13 @@
 
   &__content {
     &-item {
-      display: none;
+      visibility: hidden;
       opacity: 0;
+      height: 0;
 
       &.active {
-        display: block;
+        visibility: visible;
+        height: fit-content;
         animation: fadeIn 0.6s linear forwards;
       }
     }

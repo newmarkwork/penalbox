@@ -1,0 +1,7 @@
+mixin main-input(data)
+  .main-input
+    label
+      span!= data.label
+        if data.required
+          | *
+      input(type= data.type ? data.type : 'text' name= data.name placeholder= data.placeholder ? data.placeholder : null)

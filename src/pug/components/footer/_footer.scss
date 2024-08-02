@@ -1,3 +1,82 @@
 .footer {
-  background-color: white;
+  padding: var(--space-xxl) 0;
+  background-color: #4b5e7f;
+  font-size: 16px;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 340px auto 340px;
+    gap: var(--space-l);
+    margin-bottom: var(--space-l);
+
+    &-field {
+      @extend %flex-column;
+
+      gap: var(--space-l);
+      color: var(--white);
+
+      &-title {
+        margin-bottom: var(--space-l);
+      }
+
+      &:has(.footer-contacts),
+      &:has(.footer-nav) {
+        margin-top: var(--space-l);
+      }
+    }
+
+    &:last-child {
+      .footer__row-field {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.footer-contacts {
+  @extend %flex-column;
+
+  gap: var(--space-l);
+
+  &__item {
+    @extend %flex-align;
+
+    gap: var(--space-s);
+
+    img {
+      width: 23px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    a {
+      transition: color var(--base-transition);
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--primary);
+    }
+  }
+}
+
+.footer-nav {
+  &__list {
+    @extend %list-reset;
+    @extend %flex-column;
+
+    gap: var(--space-l);
+  }
+}
+
+.developer-link {
+  @extend %flex-align;
+
+  gap: var(--space-xs);
+
+  img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
 }

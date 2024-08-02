@@ -1,1 +1,44 @@
 footer.footer
+  .container
+    .footer__row
+
+      .footer__row-field
+        include ../../components/logos/main-logo/main-logo
+        span Дверь, убирающаяся в стену, это не просто скользящая дверь. После тщательных проработок и многочисленных изменений, удалось создать целую систему
+        span.copyrights 2024 © Penalbox
+
+      .footer__row-field
+        span.footer__row-field-title Контакты
+        .footer-contacts
+          .footer-contacts__item
+            img(src="./assets/images/icon-map-pin.svg" alt="Адрес" width="20" height="20")
+            address 127410, г. Москва, ул. Стандартная д. 6
+          .footer-contacts__item
+            img(src="./assets/images/icon-phone-small.svg" alt="Телефон" width="20" height="20")
+            a(href="tel:+79251389181") +7 925 138 91 81
+          .footer-contacts__item
+            img(src="./assets/images/icon-mail.svg" alt="Почта" width="20" height="20")
+            a(href="mailto:info@penalbox.msk.ru") info@penalbox.msk.ru
+
+      .footer__row-field
+        span.footer__row-field-title Меню
+        .footer-nav
+          ul.footer-nav__list
+            li.footer-nav__list-item
+              a(href="#") Пеналы
+            li.footer-nav__list-item
+              a(href="#") Монтаж
+            li.footer-nav__list-item
+              a(href="#") Сотрудничество
+            li.footer-nav__list-item
+              a(href="#") Контакты
+
+    .footer__row
+      .footer__row-field
+        a(href="#") Политика конфиденциальности
+      .footer__row-field
+        span Не является публичной офертой (статья 437 Гражданского кодекса РФ)
+      .footer__row-field
+        a(href="#").developer-link
+          span Разработка сайта
+          img(src="./assets/images/nmark-logo.png" alt="newmark.ru" rel="nofollow noopener noreferrer" width="150" height="30")

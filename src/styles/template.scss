@@ -20,6 +20,10 @@
 @import '../pug/sections/index-page/hero/hero';
 @import '../pug/components/item-preview/item-preview';
 @import '../pug/layouts/sections/base-section/base-section';
-@import '../pug/sections/common/offer/offer';
-@import '../pug/ui-components/forms/offer-form/offer-form';
+@import '../pug/sections/common/callback/callback';
+@import '../pug/ui-components/forms/callback-form/callback-form';
+@import '../pug/ui-components/controls/main-input/main-input';
+@import '../pug/ui-components/controls/main-checkbox/main-checkbox';
+@import '../pug/ui-components/controls/main-btn/main-btn';
+@import '../pug/components/footer/footer';
 @import '../pug/modals/modal';

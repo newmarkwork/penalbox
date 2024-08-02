@@ -1,4 +1,5 @@
-.offer {
+.callback {
+  padding: clamp(var(--space-xxl), 5vw, var(--space-xxxl)) 0;
   background-image: url('../assets/images/offer-bg-img@1x.png');
   background-size: cover;
 }

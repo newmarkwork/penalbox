@@ -1,20 +1,24 @@
 $border: 1px solid transparent;
-$border-radius: 30px;
+$border-radius: 4px;
 $background-color: var(--primary);
 $color: var(--white);
-$font-size: 20px;
+$font-family: var(--secondary-font);
+$font-size: 18px;
+$font-weight: 500;
 $padding: 10px 20px 12px;
 $box-shadow: none;
-$gap: var(--gap-xs);
+$gap: var(--space-xs);
 
 .main-btn {
   @extend %btn-reset;
-  @extend %flex-centered-content;
+  @extend %flex-center;
 
   width: fit-content;
   min-width: 50px;
-  min-height: 50px;
+  min-height: 44px;
+  font-family: $font-family;
   font-size: $font-size;
+  font-weight: $font-weight;
   padding: $padding;
   border-radius: $border-radius;
   color: $color;

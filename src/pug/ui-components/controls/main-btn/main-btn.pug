@@ -1,5 +1,5 @@
 mixin main-btn(data)
-  if data.type != 'link'
+  if data.type == 'button' || data.type == 'submit'
     button(type= data.type class= data.cls ? data.cls : null data-modal-opener= data.modal ? data.modal : null).main-btn
       if data.iconName && data.iconPosition == 'left'
         svg(width= data.iconWidth height= data.iconHeight)

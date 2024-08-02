@@ -1,0 +1,40 @@
+include ../../controls/main-input/main-input
+include ../../controls/main-checkbox/main-checkbox
+
+form(action="#").callback-form
+  .callback-form__grid
+    .callback-form__grid-item
+      span.callback-form__title Оставить заявку на PENALBOX
+      span.callback-form__text Мы свяжемся с вами в ближайшее время
+    .callback-form__grid-item
+      +main-input({
+        label: "Имя",
+        name: "Имя",
+        placeholder: "Иван Иванов",
+        required: true,
+      })
+
+      +main-input({
+        label: "Телефон",
+        name: "Телефон",
+        type: "tel",
+        placeholder: "+7(000) 000 - 00 - 00",
+        required: true,
+      })
+
+      //- +main-btn({
+      //-   type: 'submit',
+      //-   iconName: 'plane',
+      //-   iconHeight: 24,
+      //-   iconWidth: 24,
+      //-   iconPosition: 'left',
+      //-   text: 'Отправить заявку',
+      //- })
+
+      button(type="submit").main-btn.bg-dark Отправить заявку
+
+      +main-checkbox({
+        name: 'Согласие на обработку персональных данных',
+        text: 'Я согласен на обработку персональных данных'
+      })
+

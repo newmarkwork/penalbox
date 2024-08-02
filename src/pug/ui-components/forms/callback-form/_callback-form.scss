@@ -1,0 +1,84 @@
+.callback-form {
+  background-color: var(--primary);
+  width: 80vw;
+  max-width: 1080px;
+  padding: clamp(var(--space-xl), 4vw, var(--space-xxxl))
+    clamp(var(--space-l), 3vw, var(--space-xl));
+  margin: 0 auto;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 8fr 9fr;
+    gap: var(--space-l);
+    align-items: center;
+
+    @include container-down('main', $desktop-width) {
+      grid-template-columns: 1fr;
+    }
+
+    &-item {
+      &:first-child {
+        @extend %flex-column;
+
+        gap: var(--space-xs);
+      }
+
+      &:last-child {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-l);
+        align-items: flex-end;
+
+        @include container-down('main', $desktop-width) {
+          grid-template-columns: auto auto 250px;
+
+          .main-checkbox {
+            grid-column: 1/4;
+            margin: 0 auto;
+          }
+        }
+
+        @include container-down('main', $tablet-lg-width) {
+          grid-template-columns: 1fr;
+          max-width: 500px;
+          margin: 0 auto;
+
+          .main-checkbox {
+            grid-column: initial;
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: clamp(var(--fs-m), 4vw, calc(var(--fs-xl) / 1.1));
+    font-weight: var(--fw-b);
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+  }
+
+  &__text {
+    font-size: clamp(var(--fs-s), 3vw, calc(var(--fs-m) / 1.1));
+    text-align: center;
+    color: var(--white);
+  }
+
+  *[type='submit'] {
+    position: relative;
+    padding-left: 50px;
+    background-image: url('../assets/images/icon_plane.svg');
+    background-repeat: no-repeat;
+    background-position: 20px;
+    background-color: var(--dark);
+    width: 100%;
+    max-width: 250px;
+
+    @include container-down('main', $mobile-width) {
+      padding-left: 20px;
+      background-image: none;
+      text-align: center;
+    }
+  }
+}
