@@ -32,5 +32,6 @@
 @import '../pug/modals/modal';
 
 // catalog-main
-@import '../pug/sections/catalog-main/catalog/catalog';
+@import '../pug/sections/catalog/catalog-main/catalog';
+@import '../pug/sections/catalog/catalog-section/catalog-section';
 @import '../pug/ui-components/cards/catalog-card/catalog-card';

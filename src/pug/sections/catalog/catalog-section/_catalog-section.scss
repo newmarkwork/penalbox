@@ -1,0 +1,24 @@
+.catalog-section {
+  padding-bottom: calc(var(--space-l) * 2) 0;
+  margin-bottom: clamp(calc(var(--space-l) * 2), 4vw, calc(var(--space-l) * 3));
+
+  &__list {
+    @extend %list-reset;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xxxl) var(--space-l);
+
+    @include container-down('main', $desktop-width) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include container-down('main', $tablet-width) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include container-down('main', $mobile-width) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
