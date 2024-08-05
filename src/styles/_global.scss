@@ -5,8 +5,6 @@
   border-radius: 0;
 
   @extend %scrollbar;
-
-  text-wrap: balance;
 }
 
 html {
@@ -61,7 +59,7 @@ a[href='tel:*'] {
 
 a,
 button {
-  @extend %hover-opacity;
+  @extend %base-hover;
 
   cursor: pointer;
 }
@@ -76,16 +74,4 @@ address {
 
 picture {
   display: flex;
-}
-
-.hidden-laptop-down {
-  @include media-down($laptop-width) {
-    display: none;
-  }
-}
-
-.hidden-laptop-up {
-  @include media-up($laptop-width) {
-    display: none;
-  }
 }

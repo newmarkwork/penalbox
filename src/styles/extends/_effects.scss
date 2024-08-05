@@ -15,3 +15,26 @@
     opacity: 0.4;
   }
 }
+
+%base-hover {
+  transition: color var(--base-transition);
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  &:focus {
+    color: var(--primary);
+  }
+
+  &:active {
+    color: var(--primary);
+    opacity: 0.7;
+  }
+}
+
+%blur {
+  filter: blur(62px);
+}

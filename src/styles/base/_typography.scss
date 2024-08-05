@@ -40,6 +40,13 @@ h6 {
   font-size: var(--fs-xs);
 }
 
+.main-title {
+  font-weight: var(--fw-b);
+  font-size: clamp(var(--fs-m), 3.6vw, calc(var(--fs-l) * 2));
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
 .base-title {
   display: block;
   font-size: clamp(var(--fs-m), 4vw, calc(var(--fs-m) * 2));

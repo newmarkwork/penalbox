@@ -1,0 +1,17 @@
+mixin hero-slider(slides)
+  .swiper.hero-slider
+    .swiper-wrapper
+      each slide in slides
+        .swiper-slide.hero-slider__slide
+          img(src=`./assets/images/${slide.img}.png` alt= slide.title width="960" height="940")
+
+          .hero-slider__slide-content
+            img(src=`./assets/images/hero-slide-3-mock-img.png` alt= slide.title width="960" height="940")
+            span.main-title!= slide.title
+            span.base-text!= slide.text
+
+    .hero-slider__controls
+      .swiper-button-prev.hero-slider-button-prev
+      .swiper-pagination.hero-slider-pagination
+      .swiper-button-next.hero-slider-button-next
+

@@ -6,8 +6,20 @@
   &__row {
     display: grid;
     grid-template-columns: 340px auto 340px;
-    gap: var(--space-l);
+    gap: var(--space-s) var(--space-xxl);
     margin-bottom: var(--space-l);
+
+    @include container-down('main', 1200px) {
+      grid-template-columns: 1fr;
+    }
+
+    @include container-down('main', 1200px) {
+      &:not(:last-child) {
+        .footer__row-field {
+          margin-bottom: 30px;
+        }
+      }
+    }
 
     &-field {
       @extend %flex-column;
@@ -16,12 +28,22 @@
       color: var(--white);
 
       &-title {
+        font-weight: var(--fw-b);
+        text-transform: uppercase;
         margin-bottom: var(--space-l);
+
+        @include container-down('main', 1200px) {
+          margin-bottom: 0;
+        }
       }
 
       &:has(.footer-contacts),
       &:has(.footer-nav) {
         margin-top: var(--space-l);
+
+        @include container-down('main', 1200px) {
+          margin-top: 0;
+        }
       }
     }
 

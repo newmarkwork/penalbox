@@ -9209,22 +9209,6 @@
 	  IMask(field, maskOptions);
 	});
 
-	const items = document.querySelectorAll('.tabs__header-item');
-	if (items.length) {
-	  const onClickExpandContent = evt => {
-	    const target = evt.target;
-	    if (target.classList.contains('active')) return;
-	    const ID = target.dataset.id;
-	    document.querySelector('.tabs__header-item.active').classList.remove('active');
-	    document.querySelector('.tabs__content-item.active').classList.remove('active');
-	    target.classList.add('active');
-	    document.querySelector(`.tabs__content-item[data-id="${ID}"]`).classList.add('active');
-	  };
-	  items.forEach(item => {
-	    item.addEventListener('click', onClickExpandContent);
-	  });
-	}
-
 	/**
 	 * SSR Window 4.0.2
 	 * Better handling for window object in SSR environment
@@ -14135,6 +14119,43 @@
 	    update,
 	    init,
 	    destroy
+	  });
+	}
+
+	const heroSlider = document.querySelector('.hero-slider');
+	console.log(heroSlider);
+	if (heroSlider) {
+	  const pagination = heroSlider.querySelector('.hero-slider-pagination');
+	  new Swiper(heroSlider, {
+	    modules: [Navigation, Pagination],
+	    slidesPerView: 1,
+	    spaceBetween: 10,
+	    pagination: {
+	      el: pagination ? pagination : null,
+	      dynamicBullets: false,
+	      clickable: false,
+	      type: 'fraction'
+	    },
+	    navigation: {
+	      nextEl: heroSlider.querySelector('.hero-slider-button-next'),
+	      prevEl: heroSlider.querySelector('.hero-slider-button-prev')
+	    }
+	  });
+	}
+
+	const items = document.querySelectorAll('.tabs__header-item');
+	if (items.length) {
+	  const onClickExpandContent = evt => {
+	    const target = evt.target;
+	    if (target.classList.contains('active')) return;
+	    const ID = target.dataset.id;
+	    document.querySelector('.tabs__header-item.active').classList.remove('active');
+	    document.querySelector('.tabs__content-item.active').classList.remove('active');
+	    target.classList.add('active');
+	    document.querySelector(`.tabs__content-item[data-id="${ID}"]`).classList.add('active');
+	  };
+	  items.forEach(item => {
+	    item.addEventListener('click', onClickExpandContent);
 	  });
 	}
 

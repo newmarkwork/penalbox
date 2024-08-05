@@ -1,5 +1,6 @@
 .item-preview {
   @extend %flex-column;
+
   gap: var(--space-s);
 
   @include container-down('main', $laptop-width) {
@@ -9,6 +10,7 @@
   &__title {
     font-size: clamp(calc(var(--fs-s) * 1.5), 3vw, calc(var(--fs-m) * 1.5));
     font-weight: var(--fw-b);
+    text-transform: uppercase;
   }
 
   &__row {

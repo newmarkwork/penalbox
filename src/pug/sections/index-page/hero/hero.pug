@@ -1,3 +1,16 @@
+include ../../../ui-components/sliders/hero-slider/hero-slider
+
 section.hero
   .container-fluid
-    p hero-section
+    +hero-slider([
+      {
+        img: 'hero-slide-1-mock-img',
+        title: 'Пеналы для раздвижных дверей от производителя',
+        text: 'Эволюция требует исчезновения дверей, и теперь мы можем убрать их в стену.'
+      },
+      {
+        img: 'hero-slide-2-mock-img',
+        title: 'Пеналы для раздвижных дверей',
+        text: 'Эволюция требует исчезновения дверей.'
+      }
+    ])
