@@ -1,0 +1,11 @@
+.catalog {
+  padding-bottom: calc(var(--space-l) * 2) 0;
+  margin-bottom: clamp(calc(var(--space-l) * 2), 4vw, calc(var(--space-l) * 3));
+
+  &__list {
+    @extend %list-reset;
+    @extend %flex-column;
+
+    gap: clamp(var(--space-xl), 4vw, var(--space-xxxl));
+  }
+}

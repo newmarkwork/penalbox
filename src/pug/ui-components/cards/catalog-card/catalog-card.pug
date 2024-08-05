@@ -1,0 +1,21 @@
+include ../../controls/main-btn/main-btn
+
+mixin catalog-card(data)
+  .catalog-card
+    .catalog-card__grid
+      .catalog-card__grid__item
+        img(src=`./assets/images/${data.img}` alt= data.title width="720" height="510")
+      .catalog-card__grid__item
+        img(src=`./assets/images/${data.img}` alt= data.title width="720" height="510")
+        h2.base-title!= data.title
+        span.base-text!= data.text
+
+        +main-btn({
+          type: 'link',
+          iconName: 'burger',
+          iconPosition: 'left',
+          iconWidth: 18,
+          iconHeight: 12,
+          href: '#',
+          text: 'Смотреть все'
+        })

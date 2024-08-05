@@ -1,0 +1,36 @@
+.breadcrumbs {
+  @extend %flex-align;
+
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 0 var(--space-l);
+  width: fit-content;
+  color: #a8a8a8;
+
+  &__item {
+    &:not(:last-child) {
+      position: relative;
+      padding-right: 16px;
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%);
+        content: '';
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: #a8a8a8;
+      }
+    }
+
+    &:last-child span {
+      text-transform: uppercase;
+    }
+  }
+
+  @include container-down('main', $tablet-width) {
+    display: none;
+  }
+}

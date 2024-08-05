@@ -59,8 +59,7 @@ a[href='tel:*'] {
 
 a,
 button {
-  @extend %base-hover;
-
+  // @extend %base-hover;
   cursor: pointer;
 }
 

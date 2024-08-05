@@ -6,6 +6,8 @@ block variables
 
 section.section.base-section(class= sectionCls id= sectionID)
   .container
+    if breadcrumbs
+      include ../../../components/breadcrumbs/breadcrumbs
     if sectionTitle || sectionDesc
       .base-section__header
         h2.base-title= sectionTitle

@@ -1,0 +1,24 @@
+include ../../../ui-components/cards/catalog-card/catalog-card
+
+section
+  .container
+    .catalog
+      ul.catalog__list
+        li.catalog__list-item
+          +catalog-card({
+            img: 'catalog-main-1-mock-img.png',
+            title: 'Пеналы для одной двери',
+            text: 'Деревянная межкомнатная дверь убирающаяся в стену, это красиво и удобно, она находится в стене и не занимает полезную площадь.'
+          })
+        li.catalog__list-item
+          +catalog-card({
+            img: 'catalog-main-2-mock-img.png',
+            title: 'Пеналы для раздвижных дверей',
+            text: 'Межкомнатная дверь убирающаяся в стену, это красиво и удобно, она находится в стене и не занимает полезную площадь.'
+          })
+        li.catalog__list-item
+          +catalog-card({
+            img: 'catalog-main-3-mock-img.png',
+            title: 'Пеналы для стеклянных дверей',
+            text: 'Разграничивая помещения стеклянной перегородкой сделайте так что бы она откатывалась вовнутрь стены, тогда останется свободное место полезной площади.'
+          })

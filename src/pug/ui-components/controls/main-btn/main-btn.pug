@@ -14,13 +14,15 @@ mixin main-btn(data)
   if data.type == 'link'
     a(href= data.href class= data.cls ? data.cls : null).main-btn
       if data.iconName && data.iconPosition == 'left'
-        svg(width= data.iconWidth height= data.iconHeight)
-          use(xlink:href=`./assets/svg-sprite.svg#icon-${data.iconName}`)
+        //- svg(width= data.iconWidth height= data.iconHeight)
+        //-   use(xlink:href=`./assets/svg-sprite.svg#icon-${data.iconName}`)
+        img(src=`./assets/images/icon-${data.iconName}.svg` alt="Иконка" width= data.iconWidth height= data.iconHeight)
 
       span!= data.text
 
       if data.iconName && data.iconPosition == 'right'
-        svg(width= data.iconWidth height= data.iconHeight)
-          use(xlink:href=`./assets/sprite.svg#icon-${data.iconName}`)
+        //- svg(width= data.iconWidth height= data.iconHeight)
+        //-   use(xlink:href=`./assets/sprite.svg#icon-${data.iconName}`)
+        img(src=`./assets/images/icon-${data.iconName}.svg` alt="Иконка" width= data.iconWidth height= data.iconHeight)
 
 

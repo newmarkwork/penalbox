@@ -11,6 +11,7 @@
 @import '../pug/components/logos/main-logo/main-logo';
 @import '../pug/ui-components/navs/main-nav/main-nav';
 @import '../pug/components/social/social';
+@import '../pug/components/breadcrumbs/breadcrumbs';
 @import '../pug/sections/index-page/features/features';
 @import '../pug/ui-components/lists/feature-list/feature-list';
 @import '../pug/components/product-preview-tabs/product-preview-tabs';
@@ -26,5 +27,10 @@
 @import '../pug/ui-components/controls/main-input/main-input';
 @import '../pug/ui-components/controls/main-checkbox/main-checkbox';
 @import '../pug/ui-components/controls/main-btn/main-btn';
+@import '../pug/components/page-top-section/page-top-section';
 @import '../pug/components/footer/footer';
 @import '../pug/modals/modal';
+
+// catalog-main
+@import '../pug/sections/catalog-main/catalog/catalog';
+@import '../pug/ui-components/cards/catalog-card/catalog-card';

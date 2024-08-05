@@ -37,6 +37,10 @@
         }
       }
 
+      a {
+        @extend %base-hover;
+      }
+
       &:has(.footer-contacts),
       &:has(.footer-nav) {
         margin-top: var(--space-l);
@@ -69,15 +73,6 @@
       width: 23px;
       height: auto;
       object-fit: contain;
-    }
-
-    a {
-      transition: color var(--base-transition);
-    }
-
-    a:hover,
-    a:focus {
-      color: var(--primary);
     }
   }
 }
