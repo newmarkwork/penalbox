@@ -27,6 +27,7 @@
 @import '../pug/ui-components/controls/main-input/main-input';
 @import '../pug/ui-components/controls/main-checkbox/main-checkbox';
 @import '../pug/ui-components/controls/main-btn/main-btn';
+@import '../pug/ui-components/controls/main-radio/main-radio';
 @import '../pug/components/page-top-section/page-top-section';
 @import '../pug/components/footer/footer';
 @import '../pug/modals/modal';
@@ -35,3 +36,7 @@
 @import '../pug/sections/catalog/catalog-main/catalog';
 @import '../pug/sections/catalog/catalog-section/catalog-section';
 @import '../pug/ui-components/cards/catalog-card/catalog-card';
+@import '../pug/sections/catalog/catalog-item/catalog-item';
+@import '../pug/ui-components/forms/offer-form/offer-form';
+@import '../pug/ui-components/content-elems/blockquote/blockquote';
+@import '../pug/ui-components/sliders/thumb-slider/thumb-slider';

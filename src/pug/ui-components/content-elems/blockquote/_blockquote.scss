@@ -1,0 +1,9 @@
+.blockquote {
+  @extend %flex-column;
+
+  gap: var(--space-xs);
+  font-size: 14px;
+  padding: var(--space-xl);
+  border-radius: 4px;
+  background-color: rgb(241 136 36 / 30%);
+}

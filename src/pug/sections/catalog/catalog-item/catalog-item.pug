@@ -1,0 +1,18 @@
+include ../../../ui-components/cards/product-card/product-card
+include ../../../ui-components/controls/main-btn/main-btn
+include ../../../ui-components/forms/offer-form/offer-form
+include ../../../ui-components/sliders/thumb-slider/thumb-slider
+section
+  .container
+    .catalog-item
+      .catalog-item__main
+        .product
+          .product__grid
+            .product__grid-item
+              +thumb-slider()
+            .product__grid-item
+              +offer-form()
+
+      .catalog-item__tabs
+        p cat item tabs
+

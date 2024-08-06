@@ -1,0 +1,99 @@
+include ../../controls/main-radio/main-radio
+include ../../content-elems/blockquote/blockquote
+
+mixin offer-form(data)
+  form.offer-form
+    fieldset
+      span.offer-form__title Размеры дверного проема
+
+      +main-radio({
+        name: 'Размеры дверного проема',
+        label: '600 х 2000',
+        value: '600х2000'
+      })
+      +main-radio({
+        name: 'Размеры дверного проема',
+        label: '600 х 2000',
+        value: '600 х 2000'
+      })
+      +main-radio({
+        name: 'Размеры дверного проема',
+        label: '700 х 2000',
+        value: '700 х 2000'
+      })
+      +main-radio({
+        name: 'Размеры дверного проема',
+        label: '800 х 2000',
+        value: '800 х 2000'
+      })
+      +main-radio({
+        name: 'Размеры дверного проема',
+        label: '900 х 2000',
+        value: '900 х 2000'
+      })
+      +main-radio({
+        name: 'Размеры дверного проема',
+        label: 'другой размер',
+        value: 'другой размер'
+      })
+
+    fieldset
+      span.offer-form__title Дополнительные комплектующие
+
+      +main-radio({
+        name: 'Дополнительные комплектующие',
+        label: 'Доводчик',
+        value: 'Доводчик'
+      })
+      +main-radio({
+        name: 'Дополнительные комплектующие',
+        label: 'Система Push',
+        value: 'Система Push'
+      })
+      +main-radio({
+        name: 'Дополнительные комплектующие',
+        label: 'Синхронизатор',
+        value: 'Синхронизатор'
+      })
+
+    fieldset
+      span.offer-form__title Обрамление проема
+
+      +main-radio({
+        name: 'Обрамление проема',
+        label: 'Смешанное',
+        value: 'Смешанное',
+        img: 'door-type-1'
+      })
+
+      +main-radio({
+        name: 'Обрамление проема',
+        label: 'Дерево',
+        value: 'Дерево',
+        img: 'door-type-2'
+      })
+
+      +main-radio({
+        name: 'Обрамление проема',
+        label: 'Гипсокартон',
+        value: 'Гипсокартон',
+        img: 'door-type-3'
+      })
+
+    .offer-form__footer
+      .offer-form__submit
+        span.offer-form__price от <strong>100 000</strong> руб.
+        +main-btn({
+          type: 'submit',
+          iconName: 'plane',
+          iconPosition: 'left',
+          iconWidth: 22,
+          iconHeight: 22,
+          text: 'Отправить заявку',
+          cls: 'offer-form__submit-btn'
+        })
+
+      +blockquote(
+        `<span>Наш&nbsp;менеджер перезвонит Вам в&nbsp;течении 15&nbsp;минут для&nbsp;уточнения деталей заказа</span>`
+      )
+

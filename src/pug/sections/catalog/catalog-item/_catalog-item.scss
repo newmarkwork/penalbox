@@ -1,0 +1,23 @@
+.catalog-item {
+  &__main {
+    padding: calc(var(--space-l) * 2) 0;
+  }
+
+  &__tabs {
+    padding: calc(var(--space-l) * 2) 0;
+  }
+}
+
+.product {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-l);
+
+    &-item {
+      @extend %flex-column;
+
+      gap: var(--space-l);
+    }
+  }
+}

@@ -1,0 +1,123 @@
+extends ../../../layouts/sections/base-section/base-section
+
+block variables
+  -
+    sectionTitle = "Похожие товары"
+    breadcrumbs = false;
+    sectionCls = ''
+
+block content
+  include ../../../ui-components/sliders/product-card-slider/product-card-slider
+
+  +product-card-slider([
+      {
+        items: [
+          {
+            img: {
+              name: 'product-img-1.png'
+            },
+          },
+          {
+            img: {
+              name: 'product-img-2.png'
+            },
+          },
+          {
+            img: {
+              name: 'product-img-3.png'
+            },
+          }
+        ],
+
+        title: 'Single Lux',
+        text: 'Используется под обрамление деревянными доборами обрамление деревянными доборами'
+      },
+      {
+        items: [
+          {
+            img: {
+              name: 'product-img-1.png'
+            },
+          },
+          {
+            img: {
+              name: 'product-img-2.png'
+            },
+          },
+          {
+            img: {
+              name: 'product-img-3.png'
+            },
+          }
+        ],
+
+        title: 'Single Lux',
+        text: 'Используется под обрамление деревянными доборами обрамление деревянными доборами'
+      },
+      {
+        items: [
+          {
+            img: {
+              name: 'product-img-1.png'
+            },
+          },
+          {
+            img: {
+              name: 'product-img-2.png'
+            },
+          },
+          {
+            img: {
+              name: 'product-img-3.png'
+            },
+          }
+        ],
+
+        title: 'Single Lux',
+        text: 'Используется под обрамление деревянными доборами обрамление деревянными доборами'
+      },
+      {
+        items: [
+          {
+            img: {
+              name: 'product-img-2.png'
+            },
+          },
+          {
+            img: {
+              name: 'product-img-3.png'
+            },
+          },
+          {
+            img: {
+              name: 'product-img-1.png'
+            },
+          }
+        ],
+
+        title: 'Single Plaster',
+        text: 'Используется под обрамление деревянными доборами обрамление деревянными доборами'
+      },
+      {
+        items: [
+          {
+            img: {
+              name: 'product-img-3.png'
+            },
+          },
+          {
+            img: {
+              name: 'product-img-1.png'
+            },
+          },
+          {
+            img: {
+              name: 'product-img-2.png'
+            },
+          }
+        ],
+
+        title: 'Single Lux/Plaster',
+        text: 'Используется под обрамление деревянными доборами обрамление деревянными доборами'
+      }],
+    )

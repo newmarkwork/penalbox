@@ -1,0 +1,6 @@
+mixin main-radio(data)
+  label.main-radio
+    if data.img
+      img(src=`./assets/images/${data.img}.png` alt= data.value ? data.value : data.name width="150" height="120")
+    input(type="radio" name= data.name value= data.value ? data.value : null)
+    span!= data.label

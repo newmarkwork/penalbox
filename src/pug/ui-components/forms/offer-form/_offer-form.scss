@@ -1,0 +1,61 @@
+.offer-form {
+  @extend %flex-column;
+
+  gap: var(--space-l);
+  container: offer-form / inline-size;
+
+  &__title {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  fieldset {
+    @extend %fieldset-reset;
+    @extend %flex-wrap;
+
+    gap: var(--space-xs);
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-l);
+    align-items: center;
+    padding: var(--space-xl);
+    border: 1px solid #f5f5f5;
+    border-radius: 4px;
+
+    @container offer-form (max-width: 650px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__price {
+    font-size: 18px;
+    min-width: 270px;
+    text-wrap: nowrap;
+
+    strong {
+      font-size: 50px;
+      font-weight: var(--fw-b);
+    }
+  }
+
+  &__submit-btn {
+    width: 100%;
+    max-width: 270px;
+
+    @extend %hover-opacity;
+
+    img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+  }
+
+  blockquote {
+    text-align: center;
+  }
+}
