@@ -1,9 +1,11 @@
-.blockquote {
+blockquote {
   @extend %flex-column;
 
   gap: var(--space-xs);
   font-size: 14px;
-  padding: var(--space-xl);
+  margin: 0;
+  padding: clamp(24px, 3vw, var(--space-xl)) clamp(14px, 2vw, var(--space-xl));
   border-radius: 4px;
   background-color: rgb(241 136 36 / 30%);
+  width: fit-content;
 }

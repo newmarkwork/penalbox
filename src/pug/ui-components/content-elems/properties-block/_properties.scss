@@ -1,0 +1,34 @@
+.properties {
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    td {
+      padding: 10px 8px 6px;
+      border: 1px solid #d8d8d8;
+    }
+  }
+
+  &__item {
+    @extend %flex-align;
+
+    padding: 4px;
+    margin-bottom: 6px;
+
+    span:first-child {
+      position: relative;
+      padding-right: 48px;
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 16px;
+        content: '';
+        width: 16px;
+        height: 1px;
+        background-color: var(--site-color);
+      }
+    }
+  }
+}

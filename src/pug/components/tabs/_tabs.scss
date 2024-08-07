@@ -1,0 +1,40 @@
+.tabs {
+  &__header {
+    @extend %flex-align;
+
+    gap: var(--space-l);
+    margin-bottom: var(--space-l);
+
+    @include container-down('main', $tablet-width) {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    &-item {
+      @extend %btn-reset;
+      @extend %flex-center;
+
+      padding: var(--space-xs) var(--space-s);
+      font-weight: var(--fw-b);
+      color: #d8d8d8;
+
+      &.active {
+        color: var(--base-text-color);
+      }
+    }
+  }
+
+  &__content {
+    &-item {
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+
+      &.active {
+        visibility: visible;
+        height: fit-content;
+        animation: fadeIn 0.6s linear forwards;
+      }
+    }
+  }
+}

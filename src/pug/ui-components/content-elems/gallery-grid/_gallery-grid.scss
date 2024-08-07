@@ -1,0 +1,31 @@
+.gallery {
+  container: gallery-grid / inline-size;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px 24px;
+
+    @include container-down('gallery-grid', $laptop-width) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include container-down('gallery-grid', $tablet-width) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include container-down('gallery-grid', 385px) {
+      grid-template-columns: 1fr;
+    }
+
+    &-item {
+      &-header {
+        margin-bottom: 16px;
+
+        img {
+          display: flex;
+        }
+      }
+    }
+  }
+}

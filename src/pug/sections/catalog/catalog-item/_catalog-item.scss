@@ -4,20 +4,53 @@
   }
 
   &__tabs {
+    background-color: #f5f5f5;
     padding: calc(var(--space-l) * 2) 0;
+
+    .tabs {
+      &__header {
+        align-items: flex-start;
+
+        &-item {
+          border-bottom: 4px solid transparent;
+
+          &.active {
+            border-color: var(--primary);
+          }
+        }
+      }
+    }
   }
 }
 
 .product {
   &__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(400px, 1fr) 1fr;
     gap: var(--space-l);
+
+    @include container-down('main', $tablet-width) {
+      grid-template-columns: 1fr;
+    }
 
     &-item {
       @extend %flex-column;
 
       gap: var(--space-l);
+
+      &:first-child {
+        position: sticky;
+        top: calc(var(--space-l) * 2);
+        min-width: 100%;
+        aspect-ratio: 1.2 / 1;
+        overflow: hidden;
+
+        @include container-down('main', $tablet-width) {
+          position: static;
+          top: 0;
+          margin-bottom: 30px;
+        }
+      }
     }
   }
 }

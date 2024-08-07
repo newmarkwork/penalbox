@@ -17,27 +17,27 @@ p {
 }
 
 h1 {
-  font-size: var(--fs-l);
+  font-size: calc(var(--fs-xl) * 1.5);
 }
 
 h2 {
-  font-size: var(--fs-m);
+  font-size: calc(var(--fs-m) * 2);
 }
 
 h3 {
-  font-size: var(--fs-s);
+  font-size: calc(var(--fs-m) * 1.5);
 }
 
 h4 {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-l);
 }
 
 h5 {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-m);
 }
 
 h6 {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-m);
 }
 
 .main-title {

@@ -14,6 +14,7 @@
 @import '../pug/components/breadcrumbs/breadcrumbs';
 @import '../pug/sections/index-page/features/features';
 @import '../pug/ui-components/lists/feature-list/feature-list';
+@import '../pug/components/tabs/tabs'; // before other tabs
 @import '../pug/components/product-preview-tabs/product-preview-tabs';
 @import '../pug/ui-components/cards/product-card/product-card';
 @import '../pug/ui-components/sliders/product-card-slider/product-card-slider';
@@ -40,3 +41,6 @@
 @import '../pug/ui-components/forms/offer-form/offer-form';
 @import '../pug/ui-components/content-elems/blockquote/blockquote';
 @import '../pug/ui-components/sliders/thumb-slider/thumb-slider';
+@import '../pug/ui-components/content-elems/content-block/content-block';
+@import '../pug/ui-components/content-elems/gallery-grid/gallery-grid';
+@import '../pug/ui-components/content-elems/properties-block/properties';

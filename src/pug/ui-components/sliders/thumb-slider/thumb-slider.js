@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, EffectFade, Thumbs } from 'swiper/modules';
+import { Navigation, Thumbs } from 'swiper/modules';
 
 const thumbSliders = document.querySelectorAll('.thumb-slider');
 
@@ -9,21 +9,23 @@ if (thumbSliders.length) {
     const thumbSliderThumbs = slider.querySelector('.thumb-slider-thumbs');
 
     const thumbs = new Swiper(thumbSliderThumbs, {
-      slidesPerView: 3,
+      slidesPerView: 'auto',
       watchOverflow: true,
-      spaceBetween: 10,
+      watchSlidesVisibility: true,
       watchSlidesProgress: true,
-      // direction: 'vertical',
+      autoHeight: true,
+      updateOnWindowResize: true,
+      direction: 'vertical',
     });
 
     new Swiper(thumbSliderMain, {
-      modules: [Navigation, Thumbs, EffectFade],
+      modules: [Navigation, Thumbs],
       slidesPerView: 1,
+      spaceBetween: 10,
       watchOverflow: true,
       watchSlidesProgress: true,
-
-      effect: 'fade',
       preventInteractionOnTransition: true,
+
       navigation: {
         nextEl: thumbSliderMain.querySelector('.thumb-slider-button-next'),
         prevEl: thumbSliderMain.querySelector('.thumb-slider-button-prev'),

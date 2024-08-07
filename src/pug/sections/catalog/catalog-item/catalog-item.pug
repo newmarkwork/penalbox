@@ -2,6 +2,7 @@ include ../../../ui-components/cards/product-card/product-card
 include ../../../ui-components/controls/main-btn/main-btn
 include ../../../ui-components/forms/offer-form/offer-form
 include ../../../ui-components/sliders/thumb-slider/thumb-slider
+
 section
   .container
     .catalog-item
@@ -13,6 +14,55 @@ section
             .product__grid-item
               +offer-form()
 
-      .catalog-item__tabs
-        p cat item tabs
+  .catalog-item__tabs
+    .container
+      .tabs
+        .tabs__header
+          button.tabs__header-item(data-id="0").active Описание
+          button.tabs__header-item(data-id="1") Характеристики
+          button.tabs__header-item(data-id="2") Для сотрудничества
+          button.tabs__header-item(data-id="3") Доставка и оплата
+
+        .tabs__content
+          .tabs__content-item(data-id="0").active
+            .content-block
+              h3 ЕСЛИ ЕСТЬ PENALBOX, УВЕЛИЧИВАЕШЬ СВОЕ ПРОСТРАНСТВО
+
+              p Дверь, убирающаяся в стену, это не просто скользящая дверь. После тщательных проработок и многочисленных изменений, удалось создать целую систему, которая может быть использована от минимальных проемов (60 см) до максимальных (6 х 3 м). Это означает, что система может быть установлена даже в помещении шириной всего 102 см и разделит или объединит его в случае необходимости.
+
+              include ../../../ui-components/content-elems/gallery-grid/gallery-grid
+
+              p Дверь, убирающаяся в стену, это не просто скользящая дверь. После тщательных проработок и многочисленных изменений, удалось создать целую систему, которая может быть использована от минимальных проемов (60 см) до максимальных (6 х 3 м). Это означает, что система может быть установлена даже в помещении шириной всего 102 см и разделит или объединит его в случае необходимости.
+          .tabs__content-item(data-id="1")
+            .properties
+              .properties__item
+                span Водонепроницаемость
+                span 8 метров
+              .properties__item
+                span Плотность
+                span 25см
+              .properties__item
+                span Длина
+                span 800 километров
+
+              br
+              br
+
+              table
+                tr
+                  td Водонепроницаемость
+                  td 8 метров
+                tr
+                  td Плотность
+                  td 25см
+                tr
+                  td Длина
+                  td 800 километров
+
+
+          .tabs__content-item(data-id="2")
+            include ../../../ui-components/content-elems/content-block/content-block-demo
+
+          .tabs__content-item(data-id="3")
+            include ../../../ui-components/content-elems/content-block/content-block-demo
 
