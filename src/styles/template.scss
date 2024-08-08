@@ -26,6 +26,7 @@
 @import '../pug/sections/common/callback/callback';
 @import '../pug/ui-components/forms/callback-form/callback-form';
 @import '../pug/ui-components/controls/main-input/main-input';
+@import '../pug/ui-components/controls/main-textarea/main-textarea';
 @import '../pug/ui-components/controls/main-checkbox/main-checkbox';
 @import '../pug/ui-components/controls/main-btn/main-btn';
 @import '../pug/ui-components/controls/main-radio/main-radio';
@@ -44,3 +45,8 @@
 @import '../pug/ui-components/content-elems/content-block/content-block';
 @import '../pug/ui-components/content-elems/gallery-grid/gallery-grid';
 @import '../pug/ui-components/content-elems/properties-block/properties';
+@import '../pug/sections/contacts/contacts';
+@import '../pug/ui-components/content-elems/contact-block/contact-block';
+@import '../pug/ui-components/forms/ask-form/ask-form';
+@import '../pug/sections/common/map-fluid-block/map';
+@import '../pug/ui-components/yMaps/yMaps';

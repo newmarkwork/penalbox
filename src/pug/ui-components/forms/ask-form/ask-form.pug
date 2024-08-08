@@ -1,0 +1,48 @@
+include ../../controls/main-input/main-input
+include ../../controls/main-checkbox/main-checkbox
+include ../../controls/main-textarea/main-textarea
+
+form(action="#").ask-form
+
+  span.ask-form__title Задать вопрос
+  span.ask-form__text Мы свяжемся с вами в ближайшее время
+
+  .ask-form__grid
+    +main-input({
+      label: "Имя",
+      name: "Имя",
+      placeholder: "Иван Иванов",
+      required: true,
+      cls: 'invalid'
+    })
+
+    +main-input({
+      label: "Телефон",
+      name: "Телефон",
+      type: "tel",
+      placeholder: "+7(000) 000 - 00 - 00",
+      required: true,
+    })
+
+    +main-input({
+      label: "info@",
+      name: "Ваш Email",
+      type: "text",
+      placeholder: "+7(000) 000 - 00 - 00",
+      required: true,
+    })
+
+    +main-textarea({
+      label: "Ваш вопрос",
+      name: "Ваш вопрос",
+      placeholder: "Опишите свой вопрос",
+      required: true,
+    })
+
+    button(type="submit").main-btn.bg-dark Отправить заявку
+
+    +main-checkbox({
+      name: 'Согласие на обработку персональных данных',
+      text: 'Я согласен на обработку персональных данных'
+    })
+

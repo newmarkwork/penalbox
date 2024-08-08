@@ -73,3 +73,15 @@ address {
 picture {
   display: flex;
 }
+
+.invalid {
+  color: var(--danger) !important;
+
+  label {
+    color: var(--danger) !important;
+  }
+
+  & *::placeholder {
+    color: var(--danger) !important;
+  }
+}

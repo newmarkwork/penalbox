@@ -1,0 +1,29 @@
+include ../../../components/social/social
+
+.contact-block
+  span.contact-block__title Контактная информация
+
+  .contact-block__item
+    img(src="./assets/images/icon-phone-small.svg" alt="Телефон" width="23" height="14")
+    a(href="tel:+79251389181") +7 925 138 91 81
+  .contact-block__item
+    img(src="./assets/images/icon-mail.svg" alt="Почта" width="23" height="23")
+    a(href="mailto:info@penalbox.msk.ru") info@penalbox.msk.ru
+  .contact-block__item
+    img(src="./assets/images/icon-map-pin.svg" alt="Адрес" width="23" height="23")
+    address 127410, г. Москва, ул. Стандартная д. 6
+
+  +social([
+      {
+        icon: 'icon_whatsapp',
+        iconW: 60,
+        iconH: 60,
+        alt: 'whatsapp'
+      },
+      {
+        icon: 'icon_tg',
+        iconW: 48,
+        iconH: 48,
+        alt: 'telegram'
+      },
+  ])

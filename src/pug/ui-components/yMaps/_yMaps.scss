@@ -1,0 +1,59 @@
+#y-maps {
+  width: 100%;
+  height: 30vw;
+  min-height: 320px;
+
+  .ymaps-icon-content-layout {
+    &-inner {
+      display: inline-block;
+      width: fit-content;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 8px 12px;
+      box-shadow: 0 4px 10px rgb(100 94 112 / 30%);
+      border-radius: 6px;
+      color: var(--site-color);
+      background-color: var(--white);
+      text-align: start;
+
+      @include container-down('main', $mobile-width) {
+        display: none;
+      }
+    }
+  }
+
+  .zoom-btns {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100px;
+
+    button {
+      @extend %btn-reset;
+      @extend %flex-center;
+
+      width: 40px;
+      height: 40px;
+      margin: 0 5px;
+      box-shadow: 0 4px 10px rgb(100 94 112 / 30%);
+      border-radius: 6px;
+      background-color: var(--white);
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &.zoom-btn-in {
+        background-image: url('../assets/images/icon-zoom-in.svg');
+      }
+
+      &.zoom-btn-out {
+        background-image: url('../assets/images/icon-zoom-out.svg');
+      }
+
+      &:active {
+        background-color: var(--accent);
+      }
+    }
+  }
+}

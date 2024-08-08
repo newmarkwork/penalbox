@@ -1,0 +1,7 @@
+mixin main-textarea(data)
+  .main-textarea
+    label
+      span!= data.label
+        if data.required
+          | *
+      textarea(name= data.name placeholder= data.placeholder ? data.placeholder : null)

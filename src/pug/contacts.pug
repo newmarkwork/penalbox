@@ -1,0 +1,17 @@
+extends layouts/main-layout.pug
+
+block variables
+  -
+    const title = "penalbox"
+    const description = "penalbox"
+    const keywords = "penalbox"
+    //- Дополнительные файлы стили для КОНКРЕТНОЙ страницы
+    //- const styleFileNames = ['catalog-main']
+
+block content
+  include ./components/page-top-section/page-top-section
+  include ./sections/contacts/contacts
+  include ./sections/common/map-fluid-block/map
+block modals
+  //- Модальные окна используемые ТОЛЬКО на этой странице
+  //-

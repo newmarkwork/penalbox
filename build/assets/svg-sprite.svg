@@ -61,4 +61,12 @@
       </path>
     </g>
   </symbol>
+  <symbol id="icon-zoom-in">
+    <path d="M14 8H8v6H6V8H0V6h6V0h2v6h6v2Z">
+    </path>
+  </symbol>
+  <symbol id="icon-zoom-out">
+    <path d="M14 2H0V0h14v2Z">
+    </path>
+  </symbol>
 </svg>

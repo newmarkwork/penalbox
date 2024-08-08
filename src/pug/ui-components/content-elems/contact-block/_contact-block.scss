@@ -1,0 +1,40 @@
+.contact-block {
+  @extend %flex-column;
+
+  gap: 24px;
+  background-color: var(--site-color);
+
+  &__title {
+    font-size: clamp(var(--fs-m), 4vw, calc(var(--fs-xl) / 1.1));
+    font-weight: var(--fw-b);
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  &__item {
+    @extend %flex-align;
+
+    gap: 14px;
+    color: var(--white);
+
+    img {
+      width: 23px;
+      min-width: 23px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    a {
+      @extend %base-hover;
+    }
+  }
+
+  .social {
+    margin-top: 24px;
+
+    &__list {
+      gap: 24px;
+      align-items: flex-end;
+    }
+  }
+}
