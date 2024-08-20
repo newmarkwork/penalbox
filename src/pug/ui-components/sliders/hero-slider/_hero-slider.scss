@@ -1,19 +1,26 @@
 .hero-slider {
+  height: 100%;
+  overflow: hidden;
+
   &__slide {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
 
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      object-position: bottom;
     }
 
-    @include container-down('main', 620px) {
-      grid-template-columns: 1fr;
+    &-section {
+      width: 50%;
 
-      & > img {
-        display: none;
+      @include container-down('main', 620px) {
+        width: 100%;
+
+        &:first-child {
+          display: none;
+        }
       }
     }
 
@@ -23,14 +30,13 @@
       justify-content: center;
       position: relative;
       padding: clamp(30px, 6vw, 120px);
+      @extend %img-blur;
 
       img {
         position: absolute;
         top: 0;
         left: 0;
         z-index: -1;
-
-        @extend %blur;
       }
 
       .base-text {
@@ -38,7 +44,7 @@
         max-width: 580px;
         margin-bottom: 20px;
 
-        @include text-truncate(5);
+        @include text-truncate(6);
       }
     }
   }

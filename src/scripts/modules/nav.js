@@ -1,6 +1,6 @@
 import { nav, navOpener, navCloser } from '../helpers/nodes';
 import { bodyLocker } from '../helpers/utils/bodyLocker';
-import { focusTrap } from '../helpers/utils/focusTrap';
+// import { focusTrap } from '../helpers/utils/focusTrap';
 
 if (nav && navOpener && navCloser) {
   const closeNav = () => {
@@ -29,7 +29,7 @@ if (nav && navOpener && navCloser) {
     bodyLocker(true);
 
     nav.classList.add('mobile-active');
-    focusTrap(nav);
+    // focusTrap(nav);
 
     navOpener.removeEventListener('click', onClickOpenNav);
     navCloser.addEventListener('click', closeNav);

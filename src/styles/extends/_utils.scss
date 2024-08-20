@@ -12,7 +12,7 @@
 
 %title-underline {
   position: relative;
-  margin-bottom: calc(var(--space-m) + 1em);
+  margin-bottom: clamp(34px, 3.5vw, 44px);
 
   &::after {
     position: absolute;

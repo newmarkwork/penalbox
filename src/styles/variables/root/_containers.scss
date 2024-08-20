@@ -1,6 +1,6 @@
 :root {
   --content-width: 1440px;
-  --container-offset: clamp(15px, 5vw, 60px);
+  --container-offset: clamp(15px, 2.6vw, 60px);
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
   --content-fluid-width: 1920px;

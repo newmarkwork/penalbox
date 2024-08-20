@@ -5567,18 +5567,18 @@
 	  gsapWithCSS.core.Tween;
 
 	const bodyLocker = bool => {
-	  const body = document.querySelector("body");
+	  const body = document.querySelector('body');
 	  if (bool) {
-	    body.style.overflow = "hidden";
+	    body.style.overflow = 'hidden';
 	  } else {
-	    body.style.overflow = "auto";
+	    body.style.overflow = 'initial';
 	  }
 	};
 
 	const loader = document.querySelector('.loader');
-	document.querySelector('.nav');
-	document.querySelector('.nav-opener');
-	document.querySelector('.nav-closer');
+	const nav = document.querySelector('.main-nav');
+	const navOpener = document.querySelector('.js-main-nav-opener');
+	const navCloser = document.querySelector('.js-main-nav-closer');
 
 	if (loader) {
 	  bodyLocker(true);
@@ -14535,6 +14535,98 @@
 	    });
 	    myMap.controls.add(zoomControl);
 	  }
+	}
+
+	const focusableElements = ['a[href]', 'input', 'select', 'textarea', 'button', 'iframe', '[contenteditable]', '[tabindex]:not([tabindex^="-"])'];
+	const focusTrap = node => {
+	  const focusableContent = node.querySelectorAll(focusableElements);
+	  const firstFocusableElement = focusableContent[0];
+	  const lastFocusableElement = focusableContent[focusableContent.length - 1];
+	  firstFocusableElement.focus();
+	  if (focusableContent.length) {
+	    const onBtnClickHandler = evt => {
+	      const isTabPressed = evt.key === 'Tab' || evt.key === 9;
+	      if (evt.key === 'Escape') {
+	        document.removeEventListener('keydown', onBtnClickHandler);
+	      }
+	      if (!isTabPressed) {
+	        return;
+	      }
+	      if (evt.shiftKey) {
+	        if (document.activeElement === firstFocusableElement) {
+	          lastFocusableElement.focus();
+	          evt.preventDefault();
+	        }
+	      } else {
+	        if (document.activeElement === lastFocusableElement) {
+	          firstFocusableElement.focus();
+	          evt.preventDefault();
+	        }
+	      }
+	    };
+	    document.addEventListener('keydown', onBtnClickHandler);
+	  }
+	};
+
+	if (nav && navOpener && navCloser) {
+	  const closeNav = () => {
+	    gsapWithCSS.fromTo('.main-nav', {
+	      backgroundColor: 'rgba(245, 245, 245, 0.5)',
+	      backdropFilter: 'blur(3px)'
+	    }, {
+	      backgroundColor: 'transparent',
+	      backdropFilter: 'none',
+	      duration: 0.4,
+	      onComplete: () => {
+	        nav.classList.remove('mobile-expanded');
+	      }
+	    });
+	    gsapWithCSS.fromTo('.main-nav__wrapper', {
+	      transform: 'translateX(0)'
+	    }, {
+	      transform: 'translateX(-100vw)',
+	      duration: 0.4
+	    });
+	    navCloser.removeEventListener('click', closeNav);
+	    nav.removeEventListener('click', onOverlayClickCloseNav);
+	    document.removeEventListener('keydown', onEscPressCloseNav);
+	    navOpener.addEventListener('click', onClickOpenNav);
+	    bodyLocker(false);
+	  };
+	  const onOverlayClickCloseNav = evt => {
+	    if (evt.target === nav) {
+	      closeNav();
+	    }
+	  };
+	  const onEscPressCloseNav = evt => {
+	    if (evt.key === 'Escape' || evt.key === 'Esc') {
+	      closeNav();
+	    }
+	  };
+	  const onClickOpenNav = () => {
+	    bodyLocker(true);
+	    nav.classList.add('mobile-expanded');
+	    gsapWithCSS.fromTo('.main-nav', {
+	      backgroundColor: 'transparent',
+	      backdropFilter: 'none'
+	    }, {
+	      backgroundColor: 'rgba(245, 245, 245, 0.5)',
+	      backdropFilter: 'blur(3px)',
+	      duration: 0.4
+	    });
+	    gsapWithCSS.fromTo('.main-nav__wrapper', {
+	      transform: 'translateX(-100vw)'
+	    }, {
+	      transform: 'translateX(0)',
+	      duration: 0.4
+	    });
+	    focusTrap(nav);
+	    navOpener.removeEventListener('click', onClickOpenNav);
+	    navCloser.addEventListener('click', closeNav);
+	    nav.addEventListener('click', onOverlayClickCloseNav);
+	    document.addEventListener('keydown', onEscPressCloseNav);
+	  };
+	  navOpener.addEventListener('click', onClickOpenNav);
 	}
 
 }));

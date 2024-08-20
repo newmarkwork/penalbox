@@ -1,6 +1,9 @@
 .catalog-card {
   overflow: hidden;
 
+  // background: rgba(255, 255, 255, 0.5);
+  // backdrop-filter: blur(30.7px);
+
   &__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -20,21 +23,20 @@
       }
     }
 
-    &__item:last-child {
+    &-item:last-child {
       @extend %flex-center;
 
       flex-direction: column;
       position: relative;
       padding: clamp(30px, 4vw, 60px);
       gap: var(--space-l);
+      @extend %img-blur;
 
       & > img {
         position: absolute;
         top: 0;
         left: 0;
         z-index: -1;
-
-        @extend %blur;
       }
 
       .base-title {

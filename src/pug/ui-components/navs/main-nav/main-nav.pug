@@ -1,10 +1,43 @@
+
 nav.main-nav
-  ul.main-nav__list
-    li.main-nav__list-item
-      a(href="#") Пеналы
-    li.main-nav__list-item
-      a(href="#") Монтаж
-    li.main-nav__list-item
-      a(href="#") Сотрудничество
-    li.main-nav__list-item
-      a(href="#") Контакты
+  .main-nav__wrapper
+    .main-nav__header
+      include ../../../components/logos/main-logo/main-logo
+
+      button(aria-label="Закрыть меню").main-nav-closer.js-main-nav-closer
+        img(src="./assets/images/icon-close.svg" alt="Закрыть меню" width="32" height="32")
+    ul.main-nav__list
+      li.main-nav__list-item
+        <a href="#">Пеналы</a>
+        button(aria-label="Развернуть").main-nav__list-item-expand-btn V
+        <ul class="main-nav__inner-list">
+          <li>
+            <a href="#">для одной двери</a>
+          </li>
+          <li>
+            <a href="#">для раздвижных дверей</a>
+          </li>
+          <li>
+            <a href="#">для стеклянных дверей</a>
+          </li>
+        </ul>
+
+      li.main-nav__list-item
+        a(href="#") Монтаж
+        button(aria-label="Развернуть").main-nav__list-item-expand-btn V
+        <ul class="main-nav__inner-list">
+          <li>
+            <a href="#">для одной двери</a>
+          </li>
+          <li>
+            <a href="#">для раздвижных дверей</a>
+          </li>
+          <li>
+            <a href="#">для стеклянных дверей</a>
+          </li>
+        </ul>
+
+      li.main-nav__list-item
+        a(href="#") Сотрудничество
+      li.main-nav__list-item
+        a(href="#") Контакты

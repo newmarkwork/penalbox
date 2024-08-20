@@ -8,6 +8,7 @@
   &__list-item {
     a {
       @extend %flex-center;
+      @extend %hover-opacity;
     }
   }
 }

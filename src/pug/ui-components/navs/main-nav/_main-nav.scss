@@ -1,22 +1,205 @@
-.main-nav {
-  outline: 1px solid red;
-  flex-grow: 1;
+@include container-up('header', 1199px) {
+  .main-nav {
+    flex-grow: 1;
+    max-width: 800px;
+    margin: 0 auto;
 
-  &__list {
-    @extend %list-reset;
-    @extend %flex-wrap;
-    gap: var(--space-sm);
-    justify-content: space-around;
-    align-items: center;
-    gap: var(--space-m);
+    backdrop-filter: none !important; // gsap
+    background-color: transparent !important; // gsap
+
+    &__wrapper {
+      transform: translateX(0) !important; //gsap
+    }
+
+    &__header {
+      display: none;
+    }
+
+    ul {
+      li {
+        a {
+          font-weight: 700;
+          font-size: 18px;
+          text-transform: uppercase;
+          padding: var(--space-xs) var(--space-s) 2px;
+        }
+      }
+    }
+
+    &__list {
+      @extend %list-reset;
+      @extend %flex-wrap;
+      gap: var(--space-sm);
+      justify-content: space-around;
+      align-items: center;
+      gap: var(--space-m);
+    }
+
+    &__list-item {
+      position: relative;
+
+      &:hover {
+        & > .main-nav__inner-list {
+          visibility: visible;
+          opacity: 1;
+          z-index: 1;
+          transform: translateY(0);
+        }
+      }
+
+      & > a {
+        @extend %flex-center;
+        @extend %base-hover;
+      }
+
+      &-expand-btn {
+        display: none;
+      }
+    }
+
+    &__inner-list {
+      @extend %list-reset;
+
+      @extend %flex-column;
+      gap: var(--space-xxs);
+
+      background-color: var(--primary);
+      position: absolute;
+      top: 90%;
+      left: 0;
+      width: 100%;
+      min-width: fit-content;
+      height: fit-content;
+      max-height: 320px;
+      overflow: hidden;
+      overflow-y: auto;
+      padding: 24px 16px;
+      box-shadow: 0 23px 28px rgba(0, 0, 0, 0.25);
+
+      visibility: hidden;
+      opacity: 0;
+      z-index: -1;
+      transform: translateY(20px);
+      transition: all 0.25s 0.05s linear;
+
+      a {
+        display: flex;
+        white-space: nowrap;
+        color: var(--white);
+        @extend %hover-opacity;
+      }
+    }
   }
+}
 
-  &__list-item {
-    a {
-      @extend %flex-center;
-      font-weight: 700;
-      font-size: 18px;
-      padding: var(--space-xs) var(--space-s);
+@include container-down('header', 1200px) {
+  .main-nav.mobile-expanded {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100dvh;
+    z-index: 101;
+
+    .main-nav__header {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+
+      .main-nav-closer {
+        @extend %btn-reset;
+        @extend %flex-center;
+        width: 100px;
+        height: auto;
+        aspect-ratio: 1/1;
+        background-color: var(--primary);
+        margin-right: calc(clamp(15px, 2.6vw, 60px) * -1);
+
+        img {
+          width: 30px;
+          height: auto;
+          object-fit: contain;
+        }
+
+        @include container-down('header', $tablet-width) {
+          max-width: 85px;
+        }
+
+        @include container-down('header', $mobile-width) {
+          max-width: 75px;
+        }
+      }
+    }
+
+    .main-nav__wrapper {
+      @extend %flex-column;
+      gap: 24px;
+      padding: 0 clamp(15px, 2.6vw, 60px);
+      background-color: var(--white);
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .main-nav__list {
+      flex-direction: column;
+
+      a {
+        justify-content: flex-start;
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: uppercase;
+        padding: var(--space-xs) 0 2px;
+      }
+
+      &-item {
+        display: grid;
+        grid-template-columns: auto 40px;
+        gap: 0 24px;
+
+        & > a {
+          color: var(--primary);
+        }
+
+        .main-nav__inner-list {
+          display: none;
+          grid-column: 1/3;
+          padding: 8px 0;
+
+          li {
+            position: relative;
+            padding-left: 16px;
+
+            &::before {
+              position: absolute;
+              top: 9px;
+              left: 0;
+              content: '';
+              background-color: var(--site-color);
+              width: 8px;
+              height: 2px;
+            }
+          }
+        }
+
+        &.expanded {
+          .main-nav__inner-list {
+            display: flex;
+          }
+        }
+
+        &-expand-btn {
+          @extend %btn-reset;
+          @extend %flex-center;
+          @extend %hover-opacity;
+
+          width: 40px;
+          height: 40px;
+          aspect-ratio: 1/1;
+          background-color: transparent;
+        }
+      }
     }
   }
 }

@@ -1,3 +1,12 @@
 .hero {
   container: hero / inline-size;
+  height: calc(100dvh - 120px);
+  min-height: 40dvw;
+  max-height: 540px;
+
+  @include container-down('main', 620px) {
+    height: fit-content;
+    min-height: initial;
+    max-height: initial;
+  }
 }

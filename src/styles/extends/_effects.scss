@@ -35,8 +35,9 @@
   }
 }
 
-%blur {
-  filter: blur(100px);
-
-  // backdrop-filter: blur(30.7px);
+%img-blur {
+  background-color: rgb(245, 245, 245, 50%);
+  & > img {
+    filter: blur(30px);
+  }
 }
