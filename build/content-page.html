@@ -490,6 +490,86 @@
     </footer>
     <div class="modal-overlay">
       <div
+        class="modal main-modal offer-modal"
+        id="offer-modal"
+      >
+        <button
+          class="modal-closer"
+          type="button"
+          aria-label="Закрыть"
+        >
+          <svg
+            width="20"
+            height="20"
+          >
+            <use xlink:href="./assets/svg-sprite.svg#icon-close">
+            </use>
+          </svg>
+        </button>
+        <div class="modal-content">
+          <form
+            class="callback-form"
+            action="#"
+          >
+            <div class="callback-form__grid">
+              <div class="callback-form__grid-item">
+                <span class="callback-form__title">
+                  Оставить заявку на PENALBOX
+                </span>
+                <span class="callback-form__text">
+                  Мы свяжемся с вами в ближайшее время
+                </span>
+              </div>
+              <div class="callback-form__grid-item">
+                <div class="main-input">
+                  <label>
+                    <span>
+                      Имя*
+                    </span>
+                    <input
+                      type="text"
+                      name="Имя"
+                      placeholder="Иван Иванов"
+                    >
+                  </label>
+                </div>
+                <div class="main-input">
+                  <label>
+                    <span>
+                      Телефон*
+                    </span>
+                    <input
+                      type="tel"
+                      name="Телефон"
+                      placeholder="+7(000) 000 - 00 - 00"
+                    >
+                  </label>
+                </div>
+                <button
+                  class="main-btn bg-dark"
+                  type="submit"
+                >
+                  Отправить заявку
+                </button>
+                <div class="main-checkbox">
+                  <label>
+                    <span>
+                      Я согласен на обработку персональных данных
+                    </span>
+                    <input
+                      type="checkbox"
+                      name="Согласие на обработку персональных данных"
+                    >
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay">
+      <div
         class="modal main-modal success-modal"
         id="success-modal"
       >
@@ -508,7 +588,9 @@
         </button>
         <div class="modal-content">
           <span class="modal-title">
-            Спасибо !
+            Спасибо!
+            <br>
+            Ваша заявка отправлена
           </span>
           <span class="modal-text">
             Мы свяжемся в вами в ближайшее время!

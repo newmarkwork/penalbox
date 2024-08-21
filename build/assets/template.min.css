@@ -1609,7 +1609,7 @@ h6 {
   align-items: center;
 }
 
-.ymap__container, .ask-form, .contact-block, .content-block, blockquote, .offer-form, .product__grid-item, .catalog__list, .footer-nav__list, .footer-contacts, .footer__row-field, .main-textarea label, .main-input label, .callback-form__grid-item:first-child, .item-preview__row-content, .item-preview, .hero-slider__slide-content, .product-card__content, .product-card, .main-nav__inner-list, .main-nav__wrapper {
+.ymap__container, .ask-form, .contact-block, .content-block, blockquote, .offer-form, .product__grid-item, .catalog__list, .modal-content, .footer-nav__list, .footer-contacts, .footer__row-field, .main-textarea label, .main-input label, .callback-form__grid-item:first-child, .item-preview__row-content, .item-preview, .hero-slider__slide-content, .product-card__content, .product-card, .main-nav__inner-list, .main-nav__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2637,10 +2637,11 @@ picture {
 
 .callback-form {
   background-color: var(--primary);
-  width: 80vw;
+  width: 100%;
   max-width: 1080px;
   padding: clamp(var(--space-xl), 4vw, var(--space-xxxl)) clamp(var(--space-m), 3vw, var(--space-xl));
   margin: 0 auto;
+  container: callback-form/inline-size;
 }
 .callback-form__grid {
   display: -ms-grid;
@@ -2652,7 +2653,7 @@ picture {
   -ms-flex-align: center;
   align-items: center;
 }
-@container main (max-width: 1440px) {
+@container callback-form (max-width: 960px) {
   .callback-form__grid {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -2671,7 +2672,7 @@ picture {
   -ms-flex-align: center;
   align-items: center;
 }
-@container main (max-width: 1440px) {
+@container callback-form (max-width: 960px) {
   .callback-form__grid-item:last-child {
     -ms-grid-columns: 1fr 1fr 250px;
     grid-template-columns: 1fr 1fr 250px;
@@ -2686,7 +2687,7 @@ picture {
     margin: 0 auto;
   }
 }
-@container main (max-width: 960px) {
+@container callback-form (max-width: 768px) {
   .callback-form__grid-item:last-child {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
@@ -2698,7 +2699,7 @@ picture {
     grid-column: initial;
   }
 }
-@container main (max-width: 600px) {
+@container callback-form (max-width: 500px) {
   .callback-form__grid-item:last-child {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -2726,7 +2727,7 @@ picture {
   width: 100%;
   max-width: 250px;
 }
-@container main (max-width: 960px) {
+@container callback-form (max-width: 960px) {
   .callback-form *[type=submit] {
     background-image: none;
     padding-left: 20px;
@@ -2734,7 +2735,7 @@ picture {
     max-width: 100%;
   }
 }
-@container main (max-width: 534px) {}
+@container callback-form (max-width: 534px) {}
 
 .main-input label {
   gap: var(--space-xs);
@@ -3107,14 +3108,29 @@ picture {
   max-height: 85dvh;
   overflow: hidden;
   overflow-y: auto;
-  padding: 30px;
-  padding-left: 0;
 }
 .modal-content {
-  background-color: var(--dark);
+  background-color: var(--primary);
   padding: clamp(var(--gap-s), 3vw, var(--gap-xl));
   border-radius: 4px;
   border: 1px solid var(--primary);
+  padding: clamp(60px, 5vw, 80px) clamp(20px, 3vw, 40px);
+}
+.modal-content:has(.callback-form) {
+  padding: 20px;
+}
+.modal-content .modal-title {
+  font-size: clamp(var(--fs-m), 4vw, var(--fs-xl) / 1.1);
+  font-weight: var(--fw-b);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 30px;
+}
+.modal-content .modal-text {
+  font-size: clamp(var(--fs-s), 3vw, var(--fs-m) / 1.1);
+  text-align: center;
+  color: var(--white);
 }
 .modal-closer {
   position: absolute;
@@ -3128,11 +3144,14 @@ picture {
   height: fit-content;
   padding: 8px;
   border-radius: 50%;
-  background-color: var(--dark);
-  border: 1px solid var(--primary);
+  background-color: transparent;
+  border: 1px solid transparent;
+  z-index: 11;
 }
 .modal-closer svg {
-  fill: var(--primary);
+  width: 20px;
+  height: 20px;
+  fill: var(--white);
 }
 @media (hover: hover) {
   .modal-closer:hover {
