@@ -8,8 +8,8 @@ nav.main-nav
         img(src="./assets/images/icon-close.svg" alt="Закрыть меню" width="32" height="32")
     ul.main-nav__list
       li.main-nav__list-item
-        <a href="#">Пеналы</a>
-        button(aria-label="Развернуть").main-nav__list-item-expand-btn V
+        <a href="content-page.html">Пеналы</a>
+        button(aria-label="Развернуть").main-nav__list-item-expand-btn
         <ul class="main-nav__inner-list">
           <li>
             <a href="#">для одной двери</a>
@@ -24,7 +24,7 @@ nav.main-nav
 
       li.main-nav__list-item
         a(href="#") Монтаж
-        button(aria-label="Развернуть").main-nav__list-item-expand-btn V
+        button(aria-label="Развернуть").main-nav__list-item-expand-btn
         <ul class="main-nav__inner-list">
           <li>
             <a href="#">для одной двери</a>
@@ -41,3 +41,25 @@ nav.main-nav
         a(href="#") Сотрудничество
       li.main-nav__list-item
         a(href="#") Контакты
+
+    .main-nav__footer
+      +social([
+        {
+          icon: 'icon_whatsapp',
+          iconW: 60,
+          iconH: 60,
+          alt: 'whatsapp'
+        },
+        {
+          icon: 'icon_tg',
+          iconW: 48,
+          iconH: 48,
+          alt: 'telegram'
+        },
+        {
+          icon: 'icon_phone',
+          iconW: 48,
+          iconH: 48,
+          alt: 'telegram'
+        },
+      ])

@@ -1,7 +1,7 @@
 .contact-block {
   @extend %flex-column;
 
-  gap: 24px;
+  gap: 16px;
   background-color: var(--site-color);
 
   &__title {
@@ -25,7 +25,9 @@
     }
 
     a {
+      padding-top: 7px;
       @extend %base-hover;
+      color: var(--white);
     }
   }
 

@@ -1,4 +1,49 @@
-@include container-up('header', 1199px) {
+.main-nav {
+  &__wrapper {
+    @extend %flex-column;
+  }
+
+  &__list,
+  &__inner-list {
+    @extend %list-reset;
+  }
+
+  &__list-item {
+    & > a {
+      @extend %flex-center;
+      @extend %base-hover;
+    }
+  }
+
+  &__list-item-expand-btn {
+    @extend %btn-reset;
+    @extend %flex-center;
+    @extend %hover-opacity;
+  }
+
+  &__inner-list {
+    @extend %flex-column;
+
+    a {
+      @extend %hover-opacity;
+    }
+  }
+
+  &-closer {
+    @extend %btn-reset;
+    @extend %flex-center;
+
+    @include media-down($tablet-width) {
+      max-width: 85px;
+    }
+
+    @include media-down($mobile-width) {
+      max-width: 75px;
+    }
+  }
+}
+
+@include media-up(1200px) {
   .main-nav {
     flex-grow: 1;
     max-width: 800px;
@@ -15,6 +60,10 @@
       display: none;
     }
 
+    .social {
+      display: none;
+    }
+
     ul {
       li {
         a {
@@ -27,8 +76,8 @@
     }
 
     &__list {
-      @extend %list-reset;
-      @extend %flex-wrap;
+      display: flex;
+      flex-wrap: wrap;
       gap: var(--space-sm);
       justify-content: space-around;
       align-items: center;
@@ -47,20 +96,12 @@
         }
       }
 
-      & > a {
-        @extend %flex-center;
-        @extend %base-hover;
-      }
-
       &-expand-btn {
         display: none;
       }
     }
 
     &__inner-list {
-      @extend %list-reset;
-
-      @extend %flex-column;
       gap: var(--space-xxs);
 
       background-color: var(--primary);
@@ -86,20 +127,20 @@
         display: flex;
         white-space: nowrap;
         color: var(--white);
-        @extend %hover-opacity;
       }
     }
   }
 }
 
-@include container-down('header', 1200px) {
+@include media-down(1200px) {
   .main-nav.mobile-expanded {
     display: flex;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    max-width: 100%;
+    max-width: 100dvw;
+    height: 100%;
     min-height: 100dvh;
     z-index: 101;
 
@@ -107,10 +148,12 @@
       display: flex;
       gap: 30px;
       align-items: center;
+      position: sticky;
+      top: 0;
+      background-color: var(--white);
+      z-index: 11;
 
       .main-nav-closer {
-        @extend %btn-reset;
-        @extend %flex-center;
         width: 100px;
         height: auto;
         aspect-ratio: 1/1;
@@ -122,30 +165,43 @@
           height: auto;
           object-fit: contain;
         }
+      }
+    }
 
-        @include container-down('header', $tablet-width) {
-          max-width: 85px;
-        }
+    .main-nav__footer {
+      margin-top: auto;
+      .social {
+        display: block;
+        &__list {
+          gap: 24px;
 
-        @include container-down('header', $mobile-width) {
-          max-width: 75px;
+          &-item {
+            a {
+              width: 48px;
+              height: auto;
+            }
+          }
         }
       }
     }
 
     .main-nav__wrapper {
-      @extend %flex-column;
       gap: 24px;
-      padding: 0 clamp(15px, 2.6vw, 60px);
+      padding: 0 clamp(15px, 2.6vw, 60px) 40px;
       background-color: var(--white);
       width: 100%;
+      height: 100%;
       max-width: 440px;
+      overflow-y: auto;
     }
 
     .main-nav__list {
+      display: flex;
       flex-direction: column;
+      margin-bottom: 20px;
 
       a {
+        display: flex;
         justify-content: flex-start;
         font-weight: 700;
         font-size: 18px;
@@ -173,7 +229,7 @@
 
             &::before {
               position: absolute;
-              top: 9px;
+              top: 17px;
               left: 0;
               content: '';
               background-color: var(--site-color);
@@ -186,18 +242,21 @@
         &.expanded {
           .main-nav__inner-list {
             display: flex;
+            flex-direction: column;
           }
         }
 
         &-expand-btn {
-          @extend %btn-reset;
-          @extend %flex-center;
-          @extend %hover-opacity;
-
           width: 40px;
           height: 40px;
           aspect-ratio: 1/1;
           background-color: transparent;
+          background-image: url('../assets/images/icon-arrow-down.svg');
+          background-repeat: no-repeat;
+          background-size: 20px;
+          background-position: center;
+          transition: transform var(--base-transition);
+          transform: rotate(-90deg);
         }
       }
     }

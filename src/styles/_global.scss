@@ -30,6 +30,7 @@ body {
   letter-spacing: 0.001em;
   background-color: var(--site-bg-color);
   color: var(--site-color);
+  overflow-x: hidden !important;
 
   &.body-locked {
     overflow: hidden;

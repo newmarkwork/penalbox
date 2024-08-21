@@ -1,20 +1,17 @@
-import _config from '../gulp.config.js'
-const { config } = _config
+import _config from '../gulp.config.js';
+const { config } = _config;
 
-import gulp from 'gulp'
-const { src, dest } = gulp
+import gulp from 'gulp';
+const { src, dest } = gulp;
 
-import * as dartSass from 'sass'
-import gulpSass from 'gulp-sass'
-const sass = gulpSass(dartSass)
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
 
-import plumber from 'gulp-plumber'
-import autoprefixer from 'gulp-autoprefixer'
-import cleanCss from 'gulp-clean-css'
-import gulpIf from 'gulp-if'
-import rename from 'gulp-rename'
-import { cleanUnusedCss } from './cleanUnusedCss.js'
-// console.log(cleanUnusedCss);
+import plumber from 'gulp-plumber';
+import autoprefixer from 'gulp-autoprefixer';
+import gulpIf from 'gulp-if';
+import rename from 'gulp-rename';
 
 export const styles = (done) => {
   src(config.styles.src, { sourcemaps: config.isProd ? false : true })
@@ -31,16 +28,9 @@ export const styles = (done) => {
         })
       )
     )
-    .pipe(
-      gulpIf(
-        config.isProd,
-        cleanCss({
-          level: 2,
-        })
-      )
-    )
-    .pipe(gulpIf(config.isProd, rename({ suffix: '.min' })))
-    .pipe(dest(config.styles.dest, { sourcemaps: '.' }))
 
-  done()
-}
+    .pipe(gulpIf(config.isProd, rename({ suffix: '.min' })))
+    .pipe(dest(config.styles.dest, { sourcemaps: '.' }));
+
+  done();
+};

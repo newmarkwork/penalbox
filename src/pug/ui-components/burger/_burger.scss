@@ -11,23 +11,23 @@
   margin-right: calc(clamp(15px, 2.6vw, 60px) * -1);
   display: none;
 
-  @include container-down('header', $tablet-width) {
+  @include media-down($tablet-width) {
     max-width: 85px;
   }
 
-  @include container-down('header', $mobile-width) {
+  @include media-down($mobile-width) {
     max-width: 75px;
   }
 
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 100px;
-    content: '';
-    background-color: var(--primary);
-    width: 50dvw;
-    height: 100%;
-  }
+  // &::after {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 100px;
+  //   content: '';
+  //   background-color: var(--primary);
+  //   width: 50dvw;
+  //   height: 100%;
+  // }
 
   img {
     width: 40px;

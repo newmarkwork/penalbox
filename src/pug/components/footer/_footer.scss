@@ -40,6 +40,7 @@
 
       a {
         @extend %base-hover;
+        color: var(--white);
       }
 
       &:has(.footer-contacts),
@@ -75,6 +76,11 @@
       height: auto;
       object-fit: contain;
     }
+
+    a,
+    address {
+      padding-top: 5px;
+    }
   }
 }
 
@@ -84,6 +90,10 @@
     @extend %flex-column;
 
     gap: var(--space-l);
+
+    a {
+      color: var(--white);
+    }
   }
 }
 

@@ -5,7 +5,9 @@ import { bodyLocker } from '../../../../scripts/helpers/utils/bodyLocker';
 import { focusTrap } from '../../../../scripts/helpers/utils/focusTrap';
 
 if (nav && navOpener && navCloser) {
-  const closeNav = () => {
+  const animationDuration = 0.4;
+
+  const closeNav = (duration) => {
     gsap.fromTo(
       '.main-nav',
       {
@@ -15,7 +17,7 @@ if (nav && navOpener && navCloser) {
       {
         backgroundColor: 'transparent',
         backdropFilter: 'none',
-        duration: 0.4,
+        duration: duration,
         onComplete: () => {
           nav.classList.remove('mobile-expanded');
         },
@@ -29,7 +31,7 @@ if (nav && navOpener && navCloser) {
       },
       {
         transform: 'translateX(-100vw)',
-        duration: 0.4,
+        duration: duration,
       }
     );
 
@@ -40,15 +42,19 @@ if (nav && navOpener && navCloser) {
     bodyLocker(false);
   };
 
+  window.addEventListener('resize', () => {
+    closeNav(0);
+  });
+
   const onOverlayClickCloseNav = (evt) => {
     if (evt.target === nav) {
-      closeNav();
+      closeNav(animationDuration);
     }
   };
 
   const onEscPressCloseNav = (evt) => {
     if (evt.key === 'Escape' || evt.key === 'Esc') {
-      closeNav();
+      closeNav(animationDuration);
     }
   };
 
@@ -66,7 +72,7 @@ if (nav && navOpener && navCloser) {
       {
         backgroundColor: 'rgba(245, 245, 245, 0.5)',
         backdropFilter: 'blur(3px)',
-        duration: 0.4,
+        duration: animationDuration,
       }
     );
 
@@ -77,17 +83,37 @@ if (nav && navOpener && navCloser) {
       },
       {
         transform: 'translateX(0)',
-        duration: 0.4,
+        duration: animationDuration,
       }
     );
 
     focusTrap(nav);
 
     navOpener.removeEventListener('click', onClickOpenNav);
-    navCloser.addEventListener('click', closeNav);
+    navCloser.addEventListener('click', () => {
+      closeNav(animationDuration);
+    });
     nav.addEventListener('click', onOverlayClickCloseNav);
     document.addEventListener('keydown', onEscPressCloseNav);
   };
 
   navOpener.addEventListener('click', onClickOpenNav);
+
+  const mobileNavListExpanders = nav.querySelectorAll(
+    '.main-nav__list-item-expand-btn'
+  );
+
+  if (mobileNavListExpanders.length) {
+    mobileNavListExpanders.forEach((item) => {
+      item.addEventListener('click', () => {
+        item.parentNode.classList.toggle('expanded');
+
+        if (item.parentNode.classList.contains('expanded')) {
+          item.style.transform = 'rotate(0)';
+        } else {
+          item.style.transform = 'rotate(-90deg)';
+        }
+      });
+    });
+  }
 }
