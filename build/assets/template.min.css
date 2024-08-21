@@ -2735,7 +2735,6 @@ picture {
     max-width: 100%;
   }
 }
-@container callback-form (max-width: 534px) {}
 
 .main-input label {
   gap: var(--space-xs);
