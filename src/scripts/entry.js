@@ -8,3 +8,4 @@ import '../pug/ui-components/sliders/product-card-inner-slider/product-card-inne
 import '../pug/ui-components/sliders/thumb-slider/thumb-slider';
 import '../pug/ui-components/yMaps/yMaps';
 import '../pug/ui-components/navs/main-nav/main-nav';
+import './modules/fancy';

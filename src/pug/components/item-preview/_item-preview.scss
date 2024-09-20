@@ -1,7 +1,7 @@
 .item-preview {
   @extend %flex-column;
 
-  gap: var(--space-s);
+  gap: clamp(24px, 3vw, 32px);
 
   @include container-down('main', $laptop-width) {
     gap: var(--space-xxl);

@@ -1,6 +1,7 @@
 const map = document.querySelector('#y-maps');
 
 if (map) {
+  console.log(map.dataset.coords);
   let myMap = null;
 
   window.addEventListener('load', () => {
@@ -22,7 +23,7 @@ if (map) {
 
     // Метка
     const officePlacemark = new ymaps.Placemark(
-      [55.882702, 37.573303],
+      JSON.parse('[' + map.dataset.coords + ']'),
       {
         iconContent: map.dataset.iconContent
           ? `<div class="ymaps-icon-content-layout-inner">${map.dataset.iconContent}</div>`

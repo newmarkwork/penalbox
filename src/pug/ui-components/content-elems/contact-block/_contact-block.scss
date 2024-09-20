@@ -13,7 +13,7 @@
 
   &__item {
     @extend %flex-align;
-
+    width: fit-content;
     gap: 14px;
     color: var(--white);
 
@@ -24,11 +24,40 @@
       object-fit: contain;
     }
 
+
     a {
-      padding-top: 7px;
-      @extend %base-hover;
+      @extend %flex-align;
+      gap: var(--space-s);
       color: var(--white);
+      transition: color var(--base-transition);
+
+      svg {
+        width: 23px;
+        height: auto;
+        fill: var(--white);
+        transition: fill var(--base-transition);
+        margin-top: -5px;
+      }
+
+      @media(hover: hover) {
+        &:hover {
+          color: var(--primary);
+
+          svg {
+            fill: var(--primary);
+          }
+        }
+        &:focus {
+          color: var(--primary);
+
+          svg {
+            fill: var(--primary);
+          }
+        }
+      }
     }
+
+
   }
 
   .social {

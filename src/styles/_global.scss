@@ -26,11 +26,13 @@ body {
   flex-direction: column;
   font-family: var(--primary-font);
   font-weight: var(--fw-r);
+  font-size: clamp(16px, 2.4vw, 18px);
   line-height: var(--base-line-height);
   letter-spacing: 0.001em;
   background-color: var(--site-bg-color);
   color: var(--site-color);
   overflow-x: hidden !important;
+  -webkit-font-smoothing: antialiased;
 
   &.body-locked {
     overflow: hidden;
@@ -81,7 +83,8 @@ picture {
 .invalid {
   color: var(--danger) !important;
 
-  label {
+  label,
+  input {
     color: var(--danger) !important;
   }
 

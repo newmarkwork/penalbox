@@ -3,7 +3,8 @@
 
   @extend %hover-opacity;
 
-  input[type='radio'] {
+  input[type='radio'],
+  input[type='checkbox'] {
     display: none;
   }
 
@@ -16,17 +17,17 @@
       width: 100%;
       height: auto;
       object-fit: cover;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
     span {
       position: relative;
-      padding-left: 22px;
+      padding-left: 26px;
 
       &::before,
       &::after {
         position: absolute;
-        top: calc(50% - 2px);
+        top: 7px;
         transform: translateY(-50%);
         content: '';
         border-radius: 50%;
@@ -50,7 +51,8 @@
       }
     }
 
-    &:has(input[type='radio']:checked) {
+    &:has(input[type='radio']:checked),
+    &:has(input[type='checkbox']:checked) {
       span {
         &::after {
           opacity: 1;
@@ -76,7 +78,8 @@
       background-color var(--base-transition),
       color var(--base-transition);
 
-    &:has(input[type='radio']:checked) {
+    &:has(input[type='radio']:checked),
+    &:has(input[type='checkbox']:checked) {
       background-color: var(--primary);
       color: var(--white);
     }

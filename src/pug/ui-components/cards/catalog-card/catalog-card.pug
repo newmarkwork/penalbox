@@ -1,7 +1,7 @@
 include ../../controls/main-btn/main-btn
 
 mixin catalog-card(data)
-  .catalog-card
+  .catalog-card(class= data.reverse ? 'catalog-card--reverse' : null)
     .catalog-card__grid
       .catalog-card__grid-item
         img(src=`./assets/images/${data.img}` alt= data.title width="720" height="510")

@@ -14,13 +14,15 @@ footer.footer
             img(src="./assets/images/icon-map-pin.svg" alt="Адрес" width="20" height="20")
             address 127410, г. Москва, ул. Стандартная д. 6
           .footer-contacts__item
-            img(src="./assets/images/icon-phone-small.svg" alt="Телефон" width="20" height="20")
-            //- svg(width="90" height="80")
-            //-   use(xlink:href="./assets/svg-sprite.svg#icon-test")
-            a(href="tel:+79251389181") +7 925 138 91 81
+            a(href="tel:+79251389181")
+              svg(width="23" height="23")
+                use(xlink:href="./assets/svg-sprite.svg#icon-phone")
+              | +7 925 138 91 81
           .footer-contacts__item
-            img(src="./assets/images/icon-mail.svg" alt="Почта" width="20" height="20")
-            a(href="mailto:info@penalbox.msk.ru") info@penalbox.msk.ru
+            a(href="mailto:info@penalbox.msk.ru")
+              svg(width="23" height="16")
+                use(xlink:href="./assets/svg-sprite.svg#icon-mail")
+              | info@penalbox.msk.ru
 
       .footer__row-field
         span.footer__row-field-title Меню
@@ -37,7 +39,7 @@ footer.footer
 
     .footer__row
       .footer__row-field
-        a(href="#") Политика конфиденциальности
+        a(href="#").privacy-link Политика конфиденциальности
       .footer__row-field
         span Не является публичной офертой (статья 437 Гражданского кодекса РФ)
       .footer__row-field

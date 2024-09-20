@@ -1,9 +1,6 @@
 .catalog-card {
   overflow: hidden;
 
-  // background: rgba(255, 255, 255, 0.5);
-  // backdrop-filter: blur(30.7px);
-
   &__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -60,11 +57,16 @@
         }
 
         @extend %hover-opacity;
+      }
+    }
+  }
 
-        // background-image: url('../assets/images/icon-burger.svg');
-        // background-repeat: no-repeat;
-        // background-size: contain;
-        // background-position: left;
+  &--reverse {
+    .catalog-card__grid-item:first-child {
+      order: 2;
+
+      @include container-down('main', 620px) {
+        order: initial;
       }
     }
   }

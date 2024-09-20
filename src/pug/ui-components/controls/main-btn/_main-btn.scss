@@ -20,9 +20,16 @@ $gap: var(--space-xs);
   font-size: $font-size;
   font-weight: $font-weight;
   padding: $padding;
+  border: $border;
   border-radius: $border-radius;
   color: $color;
   background-color: $background-color;
   box-shadow: $box-shadow;
   gap: $gap;
+
+  &--outlined {
+    background-color: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+  }
 }

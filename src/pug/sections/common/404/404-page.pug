@@ -1,0 +1,19 @@
+include ../../../ui-components/controls/main-btn/main-btn
+
+section.nfp
+  .container.nfp__container
+    img(src="./assets/images/404.png" alt="" width="" height="")
+
+    h2.base-title Страница не найдена!
+
+    p.base-text Вы&nbsp;перешли по&nbsp;неправильной ссылке или&nbsp;страница была удалена, попробуйте начать с <a href="/">главной</a> или
+
+    +main-btn({
+      type: 'link',
+      iconName: 'burger',
+      iconPosition: 'left',
+      iconWidth: 18,
+      iconHeight: 12,
+      href: '#',
+      text: 'Перейти в каталог'
+    })

@@ -39,7 +39,6 @@
       }
 
       a {
-        @extend %base-hover;
         color: var(--white);
       }
 
@@ -68,6 +67,7 @@
 
   &__item {
     @extend %flex-align;
+    width: fit-content;
 
     gap: var(--space-s);
 
@@ -75,6 +75,38 @@
       width: 23px;
       height: auto;
       object-fit: contain;
+    }
+
+    a{
+      transition: color var(--base-transition);
+      @extend %flex-align;
+      gap: var(--space-s);
+
+
+      svg {
+        width: 23px;
+        height: auto;
+        fill: var(--white);
+        transition: fill var(--base-transition);
+        margin-top: -5px;
+      }
+
+      @media(hover: hover) {
+        &:hover {
+          color: var(--primary);
+
+          svg {
+            fill: var(--primary);
+          }
+        }
+        &:focus {
+          color: var(--primary);
+
+          svg {
+            fill: var(--primary);
+          }
+        }
+      }
     }
 
     a,
@@ -93,12 +125,14 @@
 
     a {
       color: var(--white);
+      @extend %base-hover;
     }
   }
 }
 
 .developer-link {
   @extend %flex-align;
+  @extend %hover-opacity;
 
   gap: var(--space-xs);
 
@@ -106,5 +140,10 @@
     width: 150px;
     height: auto;
     object-fit: contain;
+    margin-top: -4px;
   }
+}
+
+.privacy-link {
+  @extend %hover-opacity;
 }

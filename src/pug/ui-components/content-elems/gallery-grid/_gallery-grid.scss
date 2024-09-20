@@ -26,6 +26,12 @@
           display: flex;
         }
       }
+
+      &-content {
+        span {
+          font-weight: 700;
+        }
+      }
     }
   }
 }
