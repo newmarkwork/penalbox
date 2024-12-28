@@ -23,6 +23,7 @@
     background-position: 20px;
     background-color: var(--dark);
     width: 100%;
+    text-align: left;
 
     @include container-down('main', 1440px) {
       grid-column: 1/4;

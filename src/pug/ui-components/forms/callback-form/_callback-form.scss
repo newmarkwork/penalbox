@@ -79,6 +79,7 @@
     background-color: var(--dark);
     width: 100%;
     max-width: 250px;
+    text-align: left;
 
     @include container-down('callback-form', $tablet-lg-width) {
       background-image: none;
