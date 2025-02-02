@@ -18,7 +18,7 @@
   &__content {
     @extend %flex-column;
 
-    gap: var(--space-m);
+    gap: var(--base-space);
   }
 
   &__title {
@@ -34,5 +34,17 @@
     text-align: center;
 
     @include text-truncate(3);
+  }
+
+  &__price {
+    @extend %flex-center;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    text-align: center;
+
+    small {
+      font-size: clamp(16px, 2.6vw, 18px);
+      font-weight: 400;
+    }
   }
 }

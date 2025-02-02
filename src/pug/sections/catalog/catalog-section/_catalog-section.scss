@@ -21,4 +21,21 @@
       grid-template-columns: 1fr;
     }
   }
+
+  &__detail-text {
+    position: relative;
+    padding: clamp(30px, 3.2vw, 60px) 8px;
+    margin-top: clamp(30px, 3.2vw, 60px);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20vw;
+      max-width: 140px;
+      height: 4px;
+      content: '';
+      background-color: var(--primary);
+    }
+  }
 }

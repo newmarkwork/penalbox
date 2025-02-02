@@ -40,6 +40,10 @@
     >
     </path>
   </symbol>
+  <symbol id="icon-arrow">
+    <path d="M6.74 12.236.778 6.273 6.741.309l1.15 1.138-3.995 3.995h10.036v1.662H3.896l3.995 3.988-1.15 1.144Z">
+    </path>
+  </symbol>
   <symbol id="icon-burger">
     <path
       d="M19.5 5h-18M19.5 1h-18M19.5 9h-18M19.5 13h-18"

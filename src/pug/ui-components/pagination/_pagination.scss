@@ -1,0 +1,56 @@
+.pagination {
+  @extend %flex-center;
+  gap: 5px;
+  margin: clamp(30px, 3.6vw, 60px) auto;
+
+  &__wrapper {
+    @extend %flex-center;
+    gap: 5px;
+  }
+
+  &__btn {
+    @extend %flex-center;
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1 / 1;
+    font-size: clamp(16px, 2.6vw, 18px);
+    border-radius: 4px;
+    background-color: var(--black);
+    color: var(--white);
+    padding-top: 5px;
+
+    transition: background-color var(--base-transition);
+
+    @media (hover: hover) {
+      &:not(.pagination__btn--active):hover {
+        background-color: #464646;
+      }
+    }
+
+    &:not(.pagination__btn--active):focus {
+      background-color: #464646;
+    }
+
+    &--disabled {
+      pointer-events: none;
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    &--active {
+      background-color: var(--primary);
+    }
+
+    &--prev,
+    &--next {
+      background-image: url('../assets/images/icon-arrow.svg');
+      background-position: center;
+      background-size: 18px 22px;
+      background-repeat: no-repeat;
+    }
+
+    &--next {
+      transform: rotate(180deg);
+    }
+  }
+}

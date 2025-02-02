@@ -59,26 +59,9 @@ mixin offer-form(data)
     fieldset
       span.offer-form__title Обрамление проема
 
-      +main-radio({
-        name: 'Обрамление проема',
-        label: 'Смешанное',
-        value: 'Смешанное',
-        img: 'door-type-1'
-      })
-
-      +main-radio({
-        name: 'Обрамление проема',
-        label: 'Дерево',
-        value: 'Дерево',
-        img: 'door-type-2'
-      })
-
-      +main-radio({
-        name: 'Обрамление проема',
-        label: 'Гипсокартон',
-        value: 'Гипсокартон',
-        img: 'door-type-3'
-      })
+      .frame-box
+        img(src="./assets/images/door-type-3.png" alt="Смешанное" width="150" height="120")
+        span Смешанное
 
     .offer-form__footer
       .offer-form__submit

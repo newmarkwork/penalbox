@@ -9,3 +9,4 @@ import '../pug/ui-components/sliders/thumb-slider/thumb-slider';
 import '../pug/ui-components/yMaps/yMaps';
 import '../pug/ui-components/navs/main-nav/main-nav';
 import './modules/fancy';
+import './modules/table-wrapper';
