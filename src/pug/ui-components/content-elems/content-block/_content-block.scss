@@ -19,6 +19,13 @@
     }
   }
 
+  img {
+    object-fit: contain;
+    object-position: left;
+    max-height: 60vh;
+    max-height: 60dvh;
+  }
+
   .table-wrapper {
     overflow: hidden;
     width: 100%;
@@ -45,7 +52,8 @@
       border-collapse: collapse;
       border-spacing: 0;
 
-      thead td {
+      thead td,
+      thead th {
         font-weight: 600;
         text-align: center;
         background-color: var(--primary);

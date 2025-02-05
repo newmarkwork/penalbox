@@ -5308,6 +5308,14 @@ blockquote {
 .content-block ul li:not(:last-child) {
   margin-bottom: 6px;
 }
+.content-block img {
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: left;
+  object-position: left;
+  max-height: 60vh;
+  max-height: 60dvh;
+}
 .content-block .table-wrapper {
   overflow: hidden;
   width: 100%;
@@ -5336,7 +5344,8 @@ blockquote {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.content-block .table-wrapper table thead td {
+.content-block .table-wrapper table thead td,
+.content-block .table-wrapper table thead th {
   font-weight: 600;
   text-align: center;
   background-color: var(--primary);
